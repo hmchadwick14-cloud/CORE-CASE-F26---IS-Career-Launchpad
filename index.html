@@ -28,7 +28,7 @@
         background-color: var(--byu-navy);
         color: white;
         text-align: center;
-        padding: 40px 20px 20px 20px;
+        padding: 40px 20px 25px 20px;
       }
 
       header h1 {
@@ -89,7 +89,182 @@
         margin-bottom: 8px;
       }
 
-      /* Module 1 Layout */
+      /* Career Salary & Growth Explorer Dashboard */
+      .career-dashboard {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 28px;
+        margin-bottom: 35px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+        border: 1px solid var(--border-color);
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .dashboard-header h3 {
+        margin: 0 0 6px;
+        color: var(--byu-navy);
+        font-size: 20px;
+      }
+
+      .dashboard-header p {
+        margin: 0;
+        color: #5c6875;
+        font-size: 14px;
+      }
+
+      .salary-toggle {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--byu-navy);
+        white-space: nowrap;
+      }
+
+      .salary-toggle select {
+        padding: 8px 12px;
+        border: 1px solid #cbd5df;
+        border-radius: 6px;
+        background: white;
+        font-size: 14px;
+        width: auto;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .chart-card {
+        background: #f8fafc;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .chart-title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .chart-title-row h4 {
+        margin: 0;
+        color: var(--byu-navy);
+        font-size: 16px;
+      }
+
+      #salaryLabel,
+      #growthLabel {
+        font-weight: 700;
+        color: var(--byu-royal);
+        font-size: 15px;
+      }
+
+      .salary-track {
+        position: relative;
+        height: 14px;
+        background: #e2e8f0;
+        border-radius: 20px;
+        margin-top: 25px;
+        overflow: hidden;
+      }
+
+      .salary-range {
+        height: 100%;
+        border-radius: 20px;
+        background: var(--byu-royal);
+        width: 25%;
+        margin-left: 18%;
+        transition: all 0.45s ease;
+      }
+
+      .scale-labels {
+        display: flex;
+        justify-content: space-between;
+        color: #64748b;
+        font-size: 12px;
+        margin-top: 6px;
+      }
+
+      .growth-meter {
+        height: 14px;
+        background: #e2e8f0;
+        border-radius: 20px;
+        margin-top: 25px;
+        overflow: hidden;
+      }
+
+      .growth-bar {
+        height: 100%;
+        width: 50%;
+        border-radius: 20px;
+        background: var(--byu-royal);
+        transition: width 0.45s ease;
+      }
+
+      .growth-details {
+        margin-top: 10px;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+      }
+
+      .growth-details strong {
+        font-size: 22px;
+        color: var(--byu-navy);
+      }
+
+      .growth-details span {
+        color: #64748b;
+        font-size: 14px;
+      }
+
+      .small-note {
+        font-size: 12px;
+        color: #64748b;
+        line-height: 1.5;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .career-selector {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .career-pill {
+        background: white;
+        color: var(--byu-navy);
+        border: 1px solid #cbd5e1;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .career-pill:hover,
+      .career-pill.active {
+        background: var(--byu-royal);
+        color: white;
+        border-color: var(--byu-royal);
+      }
+
+      /* Career Cards Grid */
       .career-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -105,11 +280,41 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .career-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.11);
       }
 
       .career-card h3 {
         color: var(--byu-navy);
         margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      .career-card p {
+        margin: 0;
+        color: #334155;
+      }
+
+      .career-card .quick-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 14px 0 18px 0;
+      }
+
+      .quick-stats span {
+        background: #edf4fa;
+        color: #17496f;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
       }
 
       button.primary-btn {
@@ -132,7 +337,7 @@
         align-self: flex-start;
       }
 
-      /* Panel Containers */
+      /* Panel Containers (Quiz & Interview) */
       .panel-card {
         background-color: var(--card-bg);
         border-radius: 10px;
@@ -140,7 +345,6 @@
         padding: 30px;
       }
 
-      /* Controls */
       .controls-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -286,8 +490,13 @@
       }
 
       @media (max-width: 768px) {
-        .career-container {
+        .career-container,
+        .dashboard-grid {
           grid-template-columns: 1fr;
+        }
+        .dashboard-header {
+          align-items: flex-start;
+          flex-direction: column;
         }
         .modal-content {
           width: 90%;
@@ -317,7 +526,6 @@
     </header>
 
     <main>
-      <!-- TAB 1: CAREER DISCOVERY -->
       <section id="discoverySection">
         <div class="section-title">
           <h2>Explore IS Career Paths</h2>
@@ -327,6 +535,96 @@
           </p>
         </div>
 
+        <section class="career-dashboard">
+          <div class="dashboard-header">
+            <div>
+              <h3>Career Salary & Growth Explorer</h3>
+              <p>
+                Compare realistic U.S. salary ranges and projected job growth
+                before choosing a path.
+              </p>
+            </div>
+            <label class="salary-toggle">
+              <span>Experience:</span>
+              <select id="experienceFilter" onchange="updateCareerDashboard()">
+                <option value="entry">Entry Level</option>
+                <option value="mid">Mid Career</option>
+                <option value="senior">Senior</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="chart-card">
+              <div class="chart-title-row">
+                <h4>Typical Salary Range</h4>
+                <span id="salaryLabel">$65K–$90K</span>
+              </div>
+              <div class="salary-scale">
+                <div class="salary-track">
+                  <div id="salaryRange" class="salary-range"></div>
+                </div>
+                <div class="scale-labels">
+                  <span>$40K</span><span>$180K+</span>
+                </div>
+              </div>
+              <p id="salaryNote" class="small-note">
+                Illustrative U.S. market range; actual pay varies by location,
+                industry, and employer.
+              </p>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-title-row">
+                <h4>Projected Job Growth</h4>
+                <span id="growthLabel">Much faster than average</span>
+              </div>
+              <div class="growth-meter">
+                <div id="growthBar" class="growth-bar"></div>
+              </div>
+              <div class="growth-details">
+                <strong id="growthPercent">+17%</strong>
+                <span>projected growth</span>
+              </div>
+              <p id="growthNote" class="small-note">
+                Growth figures derived from comparable U.S. BLS occupational
+                projections.
+              </p>
+            </div>
+          </div>
+
+          <div class="career-selector" id="careerSelector">
+            <button
+              class="career-pill active"
+              data-career="software"
+              onclick="selectDashboardCareer('software')"
+            >
+              Software Developer
+            </button>
+            <button
+              class="career-pill"
+              data-career="business"
+              onclick="selectDashboardCareer('business')"
+            >
+              Business / Systems Analyst
+            </button>
+            <button
+              class="career-pill"
+              data-career="data"
+              onclick="selectDashboardCareer('data')"
+            >
+              Data Analyst / Scientist
+            </button>
+            <button
+              class="career-pill"
+              data-career="cyber"
+              onclick="selectDashboardCareer('cyber')"
+            >
+              Cybersecurity Analyst
+            </button>
+          </div>
+        </section>
+
         <div class="career-container">
           <div class="career-card">
             <div>
@@ -335,6 +633,10 @@
                 Engineer, debug, and scale enterprise applications and
                 microservices.
               </p>
+              <div class="quick-stats">
+                <span>Entry: $65K–$90K</span>
+                <span>Growth: +17%</span>
+              </div>
             </div>
             <button class="primary-btn" onclick="showCareer('software')">
               Explore Career
@@ -348,6 +650,10 @@
                 Translate ambiguous business requirements into robust technical
                 specifications.
               </p>
+              <div class="quick-stats">
+                <span>Entry: $55K–$80K</span>
+                <span>Growth: +9%</span>
+              </div>
             </div>
             <button class="primary-btn" onclick="showCareer('business')">
               Explore Career
@@ -361,6 +667,10 @@
                 Model pipelines, build BI dashboards, and surface statistical
                 business insights.
               </p>
+              <div class="quick-stats">
+                <span>Entry: $55K–$85K</span>
+                <span>Growth: +36%</span>
+              </div>
             </div>
             <button class="primary-btn" onclick="showCareer('data')">
               Explore Career
@@ -374,12 +684,22 @@
                 Defend enterprise assets, manage SIEM alerts, and engineer
                 zero-trust architecture.
               </p>
+              <div class="quick-stats">
+                <span>Entry: $60K–$90K</span>
+                <span>Growth: +33%</span>
+              </div>
             </div>
             <button class="primary-btn" onclick="showCareer('cyber')">
               Explore Career
             </button>
           </div>
         </div>
+
+        <p class="small-note" style="text-align: center; margin-top: 35px">
+          Salary ranges are illustrative U.S. estimates for career planning.
+          Growth figures are based on comparable U.S. occupational projections
+          (BLS categories) and are not guarantees of individual outcomes.
+        </p>
       </section>
 
       <!-- TAB 2: CAREER MATCH QUIZ -->
@@ -536,7 +856,6 @@
       </section>
     </main>
 
-    <!-- Career Detail Modal -->
     <div id="careerModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeCareer()">&times;</span>
@@ -576,9 +895,9 @@
             </ul>
 
             <h3>Salary & Growth Trajectory</h3>
-            <p><strong>Starting Salary Range:</strong> $78,000 – $96,000 base (Mid-Career: $125,000+)</p>
-            <p><strong>Projected Growth:</strong> 25% through 2032 (Much faster than average)</p>
-            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. Bureau of Labor Statistics (BLS)</span>
+            <p><strong>Starting Salary Range:</strong> $65,000 – $90,000 base (Mid-Career: $90,000 – $125,000; Senior: $120,000+)</p>
+            <p><strong>Projected Growth:</strong> 17% through 2033 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS</span>
 
             <h3>What Makes a Strong Candidate?</h3>
             <ul>
@@ -651,9 +970,9 @@
             </ul>
 
             <h3>Salary & Growth Trajectory</h3>
-            <p><strong>Starting Salary Range:</strong> $72,000 – $88,000 base (Mid-Career: $110,000+)</p>
-            <p><strong>Projected Growth:</strong> 11% through 2032 (Faster than average)</p>
-            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Computer Systems Analysts)</span>
+            <p><strong>Starting Salary Range:</strong> $55,000 – $80,000 base (Mid-Career: $75,000 – $105,000; Senior: $100,000+)</p>
+            <p><strong>Projected Growth:</strong> 9% through 2034 (Steady / above average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS</span>
 
             <h3>What Makes a Strong Candidate?</h3>
             <ul>
@@ -716,9 +1035,9 @@
             </ul>
 
             <h3>Salary & Growth Trajectory</h3>
-            <p><strong>Starting Salary Range:</strong> $74,000 – $92,000 base (Mid-Career: $120,000+)</p>
-            <p><strong>Projected Growth:</strong> 35% through 2032 (Much faster than average)</p>
-            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Data Scientists)</span>
+            <p><strong>Starting Salary Range:</strong> $55,000 – $85,000 base (Mid-Career: $75,000 – $110,000; Senior: $100,000+)</p>
+            <p><strong>Projected Growth:</strong> 36% through 2033 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS</span>
 
             <h3>What Makes a Strong Candidate?</h3>
             <ul>
@@ -781,9 +1100,9 @@
             </ul>
 
             <h3>Salary & Growth Trajectory</h3>
-            <p><strong>Starting Salary Range:</strong> $76,000 – $94,000 base (Mid-Career: $125,000+)</p>
-            <p><strong>Projected Growth:</strong> 32% through 2032 (Much faster than average)</p>
-            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Information Security Analysts)</span>
+            <p><strong>Starting Salary Range:</strong> $60,000 – $90,000 base (Mid-Career: $85,000 – $120,000; Senior: $110,000+)</p>
+            <p><strong>Projected Growth:</strong> 33% through 2033 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS</span>
 
             <h3>What Makes a Strong Candidate?</h3>
             <ul>
@@ -818,7 +1137,91 @@
         },
       };
 
-      // Tab Switching Logic
+      /* Dashboard Explorer Data */
+      const dashboardData = {
+        software: {
+          salary: {
+            entry: [65000, 90000],
+            mid: [90000, 125000],
+            senior: [120000, 170000],
+          },
+          growth: 17,
+          growthLabel: "Much faster than average",
+        },
+        business: {
+          salary: {
+            entry: [55000, 80000],
+            mid: [75000, 105000],
+            senior: [100000, 135000],
+          },
+          growth: 9,
+          growthLabel: "Steady / above average",
+        },
+        data: {
+          salary: {
+            entry: [55000, 85000],
+            mid: [75000, 110000],
+            senior: [100000, 160000],
+          },
+          growth: 36,
+          growthLabel: "Much faster than average",
+        },
+        cyber: {
+          salary: {
+            entry: [60000, 90000],
+            mid: [85000, 120000],
+            senior: [110000, 160000],
+          },
+          growth: 33,
+          growthLabel: "Much faster than average",
+        },
+      };
+
+      let selectedDashboardCareer = "software";
+
+      function formatSalary(value) {
+        return "$" + Math.round(value / 1000) + "K";
+      }
+
+      function selectDashboardCareer(career) {
+        selectedDashboardCareer = career;
+        document.querySelectorAll(".career-pill").forEach((btn) => {
+          btn.classList.toggle("active", btn.dataset.career === career);
+        });
+        updateCareerDashboard();
+      }
+
+      function updateCareerDashboard() {
+        const experience = document.getElementById("experienceFilter").value;
+        const data = dashboardData[selectedDashboardCareer];
+        const range = data.salary[experience];
+
+        document.getElementById("salaryLabel").textContent =
+          `${formatSalary(range[0])}–${formatSalary(range[1])}`;
+
+        const minScale = 40000;
+        const maxScale = 180000;
+        const left = Math.max(
+          0,
+          ((range[0] - minScale) / (maxScale - minScale)) * 100,
+        );
+        const width = Math.min(
+          100 - left,
+          ((range[1] - range[0]) / (maxScale - minScale)) * 100,
+        );
+
+        const salaryRange = document.getElementById("salaryRange");
+        salaryRange.style.marginLeft = left + "%";
+        salaryRange.style.width = Math.max(width, 4) + "%";
+
+        document.getElementById("growthPercent").textContent =
+          "+" + data.growth + "%";
+        document.getElementById("growthLabel").textContent = data.growthLabel;
+        document.getElementById("growthBar").style.width =
+          Math.min((data.growth / 40) * 100, 100) + "%";
+      }
+
+      /* Tab Switching Logic */
       function switchTab(tab) {
         const discSec = document.getElementById("discoverySection");
         const quizSec = document.getElementById("quizSection");
@@ -843,7 +1246,7 @@
         }
       }
 
-      // Modal Logic
+      /* Modal Logic */
       function showCareer(career) {
         const details = careerData[career];
         document.getElementById("detail-title").textContent = details.title;
@@ -864,7 +1267,7 @@
         }
       };
 
-      // Interview Prep Engine
+      /* Interview Prep Engine */
       function loadInterviewQuestion() {
         const role = document.getElementById("prepRoleSelect").value;
         const type = document.getElementById("prepTypeSelect").value;
@@ -911,7 +1314,7 @@
         document.getElementById("feedbackContainer").style.display = "block";
       }
 
-      // Quiz Engine
+      /* Quiz Engine */
       const quizQuestions = [
         {
           question:
@@ -1063,7 +1466,7 @@
         resultCard.scrollIntoView({ behavior: "smooth" });
       }
 
-      // Initialize quiz on load
+      // Initialize defaults on load
       initQuiz();
       // Voice Recording
       let mediaRecorder;
@@ -1117,6 +1520,7 @@
             "Recording complete!";
         }
       }
+      updateCareerDashboard();
     </script>
   </body>
 </html>
