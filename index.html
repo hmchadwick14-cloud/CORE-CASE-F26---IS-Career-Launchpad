@@ -337,7 +337,7 @@
         align-self: flex-start;
       }
 
-      /* Panel Containers (Quiz & Interview) */
+      /* Panel Containers (Quiz, Interview & Resources) */
       .panel-card {
         background-color: var(--card-bg);
         border-radius: 10px;
@@ -521,6 +521,9 @@
         </button>
         <button class="tab-btn" onclick="switchTab('interview')">
           Interview Prep Simulator
+        </button>
+        <button class="tab-btn" onclick="switchTab('resources')">
+          Helpful Resources
         </button>
       </nav>
     </header>
@@ -854,6 +857,41 @@
           </div>
         </div>
       </section>
+
+      <!-- TAB 4: HELPFUL RESOURCES -->
+      <section id="resourcesSection" style="display: none">
+        <div class="section-title">
+          <h2>Helpful Resources</h2>
+          <p>
+            Access official BYU career pages, placement statistics, and AI interview preparation tools.
+          </p>
+        </div>
+
+        <div class="panel-card" style="max-width: 800px; margin: 0 auto;">
+          <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
+              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">IS Career Page</h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Explore official information systems career resources and opportunities.</p>
+              <a href="https://iscareers.byu.edu/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Visit IS Career Page &rarr;</a>
+            </li>
+            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
+              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">BYU Business Career Center</h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Connect with career coaching, resume reviews, and recruiting events through CareerLaunch.</p>
+              <a href="https://careerlaunch.byu.edu/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Visit BYU Business Career Center &rarr;</a>
+            </li>
+            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
+              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">Rosie Chatbot</h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Chat with Rosie, your specialized AI assistant to get feedback on your resume.</p>
+              <a href="https://chatgpt.com/g/g-676e232878688191a4aab320acb45542-rosie-the-resume-right-er" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Open Rosie Chatbot &rarr;</a>
+            </li>
+            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
+              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">BYU BSIS Career Placement Statistics</h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Review official post-graduation placement profiles and salary data for BYU Information Systems graduates.</p>
+              <a href="https://marriott.byu.edu/infosys/careers/placement-profile/bsis/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">View Placement Statistics &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <div id="careerModal" class="modal">
@@ -910,14 +948,14 @@
               prompt:
                 "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
               tip: `
-  <strong>STAR Method: Situation → Task → Action → Result</strong>
-  <ul style="margin: 10px 0 0 20px; padding: 0;">
-    <li><strong>Situation:</strong> Briefly explain the project and the problem.</li>
-    <li><strong>Task:</strong> Explain what you were responsible for.</li>
-    <li><strong>Action:</strong> Focus on the specific steps you took to diagnose and fix the bug.</li>
-    <li><strong>Result:</strong> Explain the outcome and what improved.</li>
-    <li><strong>Be specific:</strong> Mention tools, methods, or measurable results when possible.</li>
-  </ul>
+ <strong>STAR Method: Situation → Task → Action → Result</strong>
+ <ul style="margin: 10px 0 0 20px; padding: 0;">
+   <li><strong>Situation:</strong> Briefly explain the project and the problem.</li>
+   <li><strong>Task:</strong> Explain what you were responsible for.</li>
+   <li><strong>Action:</strong> Focus on the specific steps you took to diagnose and fix the bug.</li>
+   <li><strong>Result:</strong> Explain the outcome and what improved.</li>
+   <li><strong>Be specific:</strong> Mention tools, methods, or measurable results when possible.</li>
+ </ul>
 `,
               model:
                 "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing the HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a full regression suite before merging. We shipped on schedule with zero authentication incidents.",
@@ -1226,11 +1264,13 @@
         const discSec = document.getElementById("discoverySection");
         const quizSec = document.getElementById("quizSection");
         const prepSec = document.getElementById("interviewSection");
+        const resSec = document.getElementById("resourcesSection");
         const tabs = document.querySelectorAll(".tab-btn");
 
         discSec.style.display = "none";
         quizSec.style.display = "none";
         prepSec.style.display = "none";
+        resSec.style.display = "none";
         tabs.forEach((t) => t.classList.remove("active"));
 
         if (tab === "discovery") {
@@ -1243,6 +1283,9 @@
           prepSec.style.display = "block";
           tabs[2].classList.add("active");
           loadInterviewQuestion();
+        } else if (tab === "resources") {
+          resSec.style.display = "block";
+          tabs[3].classList.add("active");
         }
       }
 
