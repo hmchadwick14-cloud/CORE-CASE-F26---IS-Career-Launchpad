@@ -175,6 +175,56 @@
           <button onclick="showCareer('cyber')">Explore Career</button>
         </div>
       </div>
+      <section id="interview-section" style="margin-top: 60px">
+        <div class="section-title">
+          <h2>Mock Interview Practice</h2>
+          <p>Select a career and practice role-specific interview questions.</p>
+        </div>
+
+        <div class="career-card">
+          <label for="career-select"><strong>Select a Career:</strong></label>
+          <br /><br />
+
+          <select id="career-select" onchange="loadInterview()">
+            <option value="">Choose a career</option>
+            <option value="software">Software / Application Developer</option>
+            <option value="business">Business / Systems Analyst</option>
+            <option value="data">Data Analyst / Data Scientist</option>
+            <option value="cyber">Cybersecurity Analyst</option>
+          </select>
+
+          <div id="interview-box" style="display: none; margin-top: 30px">
+            <p>
+              <strong>Question Type:</strong> <span id="question-type"></span>
+            </p>
+
+            <h3 id="interview-question"></h3>
+
+            <textarea
+              id="user-answer"
+              rows="7"
+              style="width: 100%; padding: 12px; box-sizing: border-box"
+              placeholder="Type your answer here..."
+            ></textarea>
+
+            <br /><br />
+
+            <button onclick="showFeedback()">Show Feedback</button>
+            <button onclick="nextQuestion()">Next Question</button>
+
+            <div
+              id="feedback-box"
+              style="
+                display: none;
+                margin-top: 25px;
+                padding: 20px;
+                background: #eef4fa;
+                border-radius: 8px;
+              "
+            ></div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Career Modal -->
@@ -415,6 +465,176 @@
           closeCareer();
         }
       };
+
+      const interviewData = {
+        software: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you solved a difficult technical problem.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Use the STAR structure: Situation, Task, Action, Result</li>
+          <li>Clearly explain the technical problem</li>
+          <li>Describe your specific contribution</li>
+          <li>Explain how you tested or validated the solution</li>
+          <li>End with a measurable or clear result</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "What is the difference between an array and a linked list?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Arrays store elements in contiguous memory</li>
+          <li>Linked lists use nodes connected by references</li>
+          <li>Arrays allow fast indexed access</li>
+          <li>Linked lists can make insertions and deletions easier in some cases</li>
+        </ul>
+      `,
+          },
+        ],
+
+        business: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you worked with someone who had different priorities than you.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the disagreement clearly</li>
+          <li>Show how you listened to the other person's needs</li>
+          <li>Explain how you reached alignment</li>
+          <li>Describe the final business outcome</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "How would you gather requirements for a new information system?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Identify stakeholders</li>
+          <li>Conduct interviews or workshops</li>
+          <li>Document functional and non-functional requirements</li>
+          <li>Prioritize requirements</li>
+          <li>Validate requirements with stakeholders</li>
+        </ul>
+      `,
+          },
+        ],
+
+        data: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you used data to make a recommendation.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the business question</li>
+          <li>Describe the data you used</li>
+          <li>Explain your analysis</li>
+          <li>Describe the recommendation</li>
+          <li>Explain the result or impact</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "What is the difference between INNER JOIN and LEFT JOIN in SQL?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>INNER JOIN returns only matching rows from both tables</li>
+          <li>LEFT JOIN returns all rows from the left table</li>
+          <li>Unmatched right-table values appear as NULL in a LEFT JOIN</li>
+        </ul>
+      `,
+          },
+        ],
+
+        cyber: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you had to respond quickly to a problem.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the urgent situation</li>
+          <li>Describe how you prioritized actions</li>
+          <li>Show calm decision-making</li>
+          <li>Explain the result</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question: "What is the principle of least privilege?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Users receive only the access they need</li>
+          <li>Access should be limited by role and responsibility</li>
+          <li>It reduces the impact of compromised accounts</li>
+          <li>Permissions should be reviewed regularly</li>
+        </ul>
+      `,
+          },
+        ],
+      };
+
+      let currentCareer = "";
+      let currentQuestion = 0;
+
+      function loadInterview() {
+        currentCareer = document.getElementById("career-select").value;
+        currentQuestion = 0;
+
+        if (!currentCareer) {
+          document.getElementById("interview-box").style.display = "none";
+          return;
+        }
+
+        document.getElementById("interview-box").style.display = "block";
+        displayQuestion();
+      }
+
+      function displayQuestion() {
+        const question = interviewData[currentCareer][currentQuestion];
+
+        document.getElementById("question-type").textContent = question.type;
+        document.getElementById("interview-question").textContent =
+          question.question;
+        document.getElementById("user-answer").value = "";
+        document.getElementById("feedback-box").style.display = "none";
+      }
+
+      function showFeedback() {
+        const question = interviewData[currentCareer][currentQuestion];
+
+        document.getElementById("feedback-box").innerHTML = question.feedback;
+        document.getElementById("feedback-box").style.display = "block";
+      }
+
+      function nextQuestion() {
+        currentQuestion++;
+
+        if (currentQuestion >= interviewData[currentCareer].length) {
+          currentQuestion = 0;
+        }
+
+        displayQuestion();
+      }
     </script>
   </body>
 </html>
