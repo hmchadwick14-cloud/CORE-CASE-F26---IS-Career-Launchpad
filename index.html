@@ -256,7 +256,8 @@
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
       }
 
-      .modal-content h2, .modal-content h3 {
+      .modal-content h2,
+      .modal-content h3 {
         color: var(--byu-navy);
       }
 
@@ -299,11 +300,19 @@
   <body>
     <header>
       <h1>IS Career Launchpad</h1>
-      <p>Explore high-impact IS career paths and practice realistic interviews.</p>
+      <p>
+        Explore high-impact IS career paths and practice realistic interviews.
+      </p>
       <nav class="tab-nav">
-        <button class="tab-btn active" onclick="switchTab('discovery')">Career Path Discovery</button>
-        <button class="tab-btn" onclick="switchTab('quiz')">Career Match Quiz</button>
-        <button class="tab-btn" onclick="switchTab('interview')">Interview Prep Simulator</button>
+        <button class="tab-btn active" onclick="switchTab('discovery')">
+          Career Path Discovery
+        </button>
+        <button class="tab-btn" onclick="switchTab('quiz')">
+          Career Match Quiz
+        </button>
+        <button class="tab-btn" onclick="switchTab('interview')">
+          Interview Prep Simulator
+        </button>
       </nav>
     </header>
 
@@ -312,64 +321,109 @@
       <section id="discoverySection">
         <div class="section-title">
           <h2>Explore IS Career Paths</h2>
-          <p>Select a track to inspect day-to-day work, entry requirements, and verified compensation data.</p>
+          <p>
+            Select a track to inspect day-to-day work, entry requirements, and
+            verified compensation data.
+          </p>
         </div>
 
         <div class="career-container">
           <div class="career-card">
             <div>
               <h3>Software / Application Developer</h3>
-              <p>Engineer, debug, and scale enterprise applications and microservices.</p>
+              <p>
+                Engineer, debug, and scale enterprise applications and
+                microservices.
+              </p>
             </div>
-            <button class="primary-btn" onclick="showCareer('software')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('software')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Business / Systems Analyst</h3>
-              <p>Translate ambiguous business requirements into robust technical specifications.</p>
+              <p>
+                Translate ambiguous business requirements into robust technical
+                specifications.
+              </p>
             </div>
-            <button class="primary-btn" onclick="showCareer('business')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('business')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Data Analyst / Data Scientist</h3>
-              <p>Model pipelines, build BI dashboards, and surface statistical business insights.</p>
+              <p>
+                Model pipelines, build BI dashboards, and surface statistical
+                business insights.
+              </p>
             </div>
-            <button class="primary-btn" onclick="showCareer('data')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('data')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Cybersecurity Analyst</h3>
-              <p>Defend enterprise assets, manage SIEM alerts, and engineer zero-trust architecture.</p>
+              <p>
+                Defend enterprise assets, manage SIEM alerts, and engineer
+                zero-trust architecture.
+              </p>
             </div>
-            <button class="primary-btn" onclick="showCareer('cyber')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('cyber')">
+              Explore Career
+            </button>
           </div>
         </div>
       </section>
 
       <!-- TAB 2: CAREER MATCH QUIZ -->
-      <section id="quizSection" style="display: none;">
+      <section id="quizSection" style="display: none">
         <div class="section-title">
           <h2>IS Career Match Quiz</h2>
-          <p>Discover which Information Systems track best fits your problem-solving style.</p>
+          <p>
+            Discover which Information Systems track best fits your
+            problem-solving style.
+          </p>
         </div>
 
-        <div class="panel-card" style="max-width: 800px; margin: 0 auto;">
+        <div class="panel-card" style="max-width: 800px; margin: 0 auto">
           <div id="quizQuestionsContainer"></div>
-          <button class="primary-btn" onclick="submitQuiz()" style="margin-top: 15px;">Calculate My Fit</button>
+          <button
+            class="primary-btn"
+            onclick="submitQuiz()"
+            style="margin-top: 15px"
+          >
+            Calculate My Fit
+          </button>
 
-          <div id="quizResult" style="display: none; margin-top: 25px; padding: 20px; background: #eef4fa; border-left: 5px solid var(--byu-navy); border-radius: 6px;"></div>
+          <div
+            id="quizResult"
+            style="
+              display: none;
+              margin-top: 25px;
+              padding: 20px;
+              background: #eef4fa;
+              border-left: 5px solid var(--byu-navy);
+              border-radius: 6px;
+            "
+          ></div>
         </div>
       </section>
 
       <!-- TAB 3: INTERVIEW PREP -->
-      <section id="interviewSection" style="display: none;">
+      <section id="interviewSection" style="display: none">
         <div class="section-title">
           <h2>Mock Interview Engine</h2>
-          <p>Practice realistic, entry-level interview scenarios with immediate rubric feedback.</p>
+          <p>
+            Practice realistic, entry-level interview scenarios with immediate
+            rubric feedback.
+          </p>
         </div>
 
         <div class="panel-card">
@@ -377,7 +431,9 @@
             <div>
               <label for="prepRoleSelect">Target Career Path</label>
               <select id="prepRoleSelect" onchange="loadInterviewQuestion()">
-                <option value="software">Software / Application Developer</option>
+                <option value="software">
+                  Software / Application Developer
+                </option>
                 <option value="business">Business / Systems Analyst</option>
                 <option value="data">Data Analyst / Data Scientist</option>
                 <option value="cyber">Cybersecurity Analyst</option>
@@ -394,13 +450,72 @@
 
           <div class="question-box">
             <h4 id="questionHeading">Prompt</h4>
-            <p id="questionText" style="margin: 0;"></p>
+            <p id="questionText" style="margin: 0"></p>
+          </div>
+          <div
+            id="interviewTip"
+            style="
+              background: #fff8e6;
+              border-left: 4px solid #f59e0b;
+              padding: 14px 18px;
+              border-radius: 4px;
+              margin-bottom: 20px;
+            "
+          >
+            <strong>💡 Interview Tips</strong>
+            <p id="interviewTipText" style="margin: 6px 0 0 0"></p>
           </div>
 
           <label for="userResponse">Your Answer Attempt:</label>
-          <textarea id="userResponse" placeholder="Structure your response clearly. Be specific about tools, metrics, and processes..."></textarea>
-          
-          <button class="primary-btn" onclick="evaluateAnswer()">Submit & Reveal Strong Answer</button>
+          <textarea
+            id="userResponse"
+            placeholder="Structure your response clearly. Be specific about tools, metrics, and processes..."
+          ></textarea>
+          <div id="voicePractice" style="margin-bottom: 20px">
+            <p
+              style="
+                font-weight: 600;
+                color: var(--byu-navy);
+                margin-bottom: 8px;
+              "
+            >
+              🎙️ Or Practice Your Answer Out Loud
+            </p>
+
+            <button
+              type="button"
+              class="primary-btn"
+              id="recordBtn"
+              onclick="startRecording()"
+            >
+              🎙️ Record Answer
+            </button>
+
+            <button
+              type="button"
+              class="primary-btn"
+              id="stopBtn"
+              onclick="stopRecording()"
+              disabled
+            >
+              ⏹ Stop Recording
+            </button>
+
+            <span
+              id="recordingStatus"
+              style="margin-left: 12px; font-weight: 600"
+            ></span>
+
+            <div id="audioPlayback" style="display: none; margin-top: 15px">
+              <p style="margin-bottom: 6px">
+                <strong>Listen to your answer:</strong>
+              </p>
+              <audio id="recordedAudio" controls></audio>
+            </div>
+          </div>
+          <button class="primary-btn" onclick="evaluateAnswer()">
+            Submit & Reveal Strong Answer
+          </button>
 
           <div id="feedbackContainer" class="feedback-box">
             <div class="strong-answer-card">
@@ -410,7 +525,10 @@
 
             <div class="rubric-checklist">
               <h4>Self-Evaluation Checklist</h4>
-              <p style="font-size: 13px; color: #64748b; margin-top: -5px;">Compare your written attempt against these core evaluation criteria:</p>
+              <p style="font-size: 13px; color: #64748b; margin-top: -5px">
+                Compare your written attempt against these core evaluation
+                criteria:
+              </p>
               <div id="checklistItems"></div>
             </div>
           </div>
@@ -470,24 +588,38 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
-              model: "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing the HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a full regression suite before merging. We shipped on schedule with zero authentication incidents.",
+              prompt:
+                "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
+              tip: `
+  <strong>STAR Method: Situation → Task → Action → Result</strong>
+  <ul style="margin: 10px 0 0 20px; padding: 0;">
+    <li><strong>Situation:</strong> Briefly explain the project and the problem.</li>
+    <li><strong>Task:</strong> Explain what you were responsible for.</li>
+    <li><strong>Action:</strong> Focus on the specific steps you took to diagnose and fix the bug.</li>
+    <li><strong>Result:</strong> Explain the outcome and what improved.</li>
+    <li><strong>Be specific:</strong> Mention tools, methods, or measurable results when possible.</li>
+  </ul>
+`,
+              model:
+                "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing the HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a full regression suite before merging. We shipped on schedule with zero authentication incidents.",
               criteria: [
                 "Clearly defined the specific bug and high-stakes context",
                 "Demonstrated a structured debugging methodology rather than trial-and-error",
-                "Quantified the outcome or confirmed regression testing was conducted"
-              ]
+                "Quantified the outcome or confirmed regression testing was conducted",
+              ],
             },
             technical: {
-              prompt: "Explain the difference between synchronous and asynchronous operations. In what scenario would you use an async call in a web application?",
-              model: "Synchronous operations execute sequentially, blocking subsequent execution until the current task finishes. Asynchronous execution offloads the operation (such as an external API call or disk I/O) to the event loop or background worker thread, allowing the main thread to continue processing without freezing. You should use asynchronous calls for long-running I/O tasks—like querying a database or requesting data from a payment gateway—to keep the application UI responsive and maintain server throughput.",
+              prompt:
+                "Explain the difference between synchronous and asynchronous operations. In what scenario would you use an async call in a web application?",
+              model:
+                "Synchronous operations execute sequentially, blocking subsequent execution until the current task finishes. Asynchronous execution offloads the operation (such as an external API call or disk I/O) to the event loop or background worker thread, allowing the main thread to continue processing without freezing. You should use asynchronous calls for long-running I/O tasks—like querying a database or requesting data from a payment gateway—to keep the application UI responsive and maintain server throughput.",
               criteria: [
                 "Accurately defined blocking vs. non-blocking execution",
                 "Cited concrete examples like database calls, file I/O, or third-party APIs",
-                "Mentioned UI responsiveness or thread optimization"
-              ]
-            }
-          }
+                "Mentioned UI responsiveness or thread optimization",
+              ],
+            },
+          },
         },
 
         business: {
@@ -531,24 +663,28 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Describe a situation where a stakeholder requested a critical feature that was impossible to build within the sprint deadline. How did you handle it?",
-              model: "While working on a client management tool, a stakeholder requested full Salesforce integration four days before sprint close. Rather than flatly saying no, I scheduled a 15-minute alignment call to understand the underlying business driver: they needed client contact details synchronized for an upcoming campaign. I explained the technical scope and proposed an MVP compromise: we implemented a lightweight manual CSV import for the campaign that week, then scheduled the full bi-directional API sync for the subsequent sprint. The stakeholder met their deadline, and engineering protected system stability.",
+              prompt:
+                "Describe a situation where a stakeholder requested a critical feature that was impossible to build within the sprint deadline. How did you handle it?",
+              model:
+                "While working on a client management tool, a stakeholder requested full Salesforce integration four days before sprint close. Rather than flatly saying no, I scheduled a 15-minute alignment call to understand the underlying business driver: they needed client contact details synchronized for an upcoming campaign. I explained the technical scope and proposed an MVP compromise: we implemented a lightweight manual CSV import for the campaign that week, then scheduled the full bi-directional API sync for the subsequent sprint. The stakeholder met their deadline, and engineering protected system stability.",
               criteria: [
                 "Addressed stakeholder conflict with empathy and professionalism",
                 "Offered a functional trade-off or MVP rather than an outright refusal",
-                "Maintained sprint velocity and engineering team integrity"
-              ]
+                "Maintained sprint velocity and engineering team integrity",
+              ],
             },
             technical: {
-              prompt: "How do you distinguish between a functional requirement and a non-functional requirement? Give an example of each for an e-commerce platform.",
-              model: "Functional requirements describe what the system must explicitly do—the specific behaviors, user actions, and business logic. For an e-commerce site, a functional requirement is: 'A user must receive an email confirmation with an order receipt within 60 seconds of checkout.' Non-functional requirements specify how the system performs—covering system quality attributes like performance, scalability, security, and availability. For the same site, a non-functional requirement is: 'The checkout endpoint must support 5,000 concurrent transactions with latency under 200 milliseconds.'",
+              prompt:
+                "How do you distinguish between a functional requirement and a non-functional requirement? Give an example of each for an e-commerce platform.",
+              model:
+                "Functional requirements describe what the system must explicitly do—the specific behaviors, user actions, and business logic. For an e-commerce site, a functional requirement is: 'A user must receive an email confirmation with an order receipt within 60 seconds of checkout.' Non-functional requirements specify how the system performs—covering system quality attributes like performance, scalability, security, and availability. For the same site, a non-functional requirement is: 'The checkout endpoint must support 5,000 concurrent transactions with latency under 200 milliseconds.'",
               criteria: [
                 "Clearly articulated the distinction between behavior ('what') and performance/constraints ('how')",
                 "Provided realistic, distinct e-commerce examples for both",
-                "Used industry-standard terminology (latency, throughput, availability, etc.)"
-              ]
-            }
-          }
+                "Used industry-standard terminology (latency, throughput, availability, etc.)",
+              ],
+            },
+          },
         },
 
         data: {
@@ -592,24 +728,28 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Have you ever presented data that contradicted a leader's intuition or hypothesis? How did you communicate the findings?",
-              model: "During an analytics internship, our marketing director assumed a specific email campaign was driving our sales bump. When I analyzed the multi-touch attribution data in SQL, I discovered that 85% of purchasers had already initiated a trial via organic search before the email was sent; the email had a negligible incremental conversion lift. In my presentation, I validated the campaign's strong engagement rates first, then walked through the attribution model step-by-step using clear cohort charts. By focusing entirely on methodology and proposing a re-allocation of ad spend toward top-of-funnel search, leadership trusted the data and reallocated $15,000 to higher-converting channels.",
+              prompt:
+                "Have you ever presented data that contradicted a leader's intuition or hypothesis? How did you communicate the findings?",
+              model:
+                "During an analytics internship, our marketing director assumed a specific email campaign was driving our sales bump. When I analyzed the multi-touch attribution data in SQL, I discovered that 85% of purchasers had already initiated a trial via organic search before the email was sent; the email had a negligible incremental conversion lift. In my presentation, I validated the campaign's strong engagement rates first, then walked through the attribution model step-by-step using clear cohort charts. By focusing entirely on methodology and proposing a re-allocation of ad spend toward top-of-funnel search, leadership trusted the data and reallocated $15,000 to higher-converting channels.",
               criteria: [
                 "Framed the contradiction objectively with data rather than personal opinion",
                 "Maintained constructive rapport with leadership without being defensive",
-                "Connected the analysis directly to business impact and cost efficiency"
-              ]
+                "Connected the analysis directly to business impact and cost efficiency",
+              ],
             },
             technical: {
-              prompt: "What is the difference between WHERE and HAVING in SQL? In what order are they executed in a query?",
-              model: "The WHERE clause filters individual rows before any aggregations or groupings take place. In contrast, the HAVING clause filters grouped records after an aggregate function (such as COUNT, SUM, or AVG) has been computed via a GROUP BY clause. In SQL logical query processing, FROM and WHERE execute first to narrow down the dataset, followed by GROUP BY, then HAVING evaluates the aggregated groups, and finally SELECT and ORDER BY execute.",
+              prompt:
+                "What is the difference between WHERE and HAVING in SQL? In what order are they executed in a query?",
+              model:
+                "The WHERE clause filters individual rows before any aggregations or groupings take place. In contrast, the HAVING clause filters grouped records after an aggregate function (such as COUNT, SUM, or AVG) has been computed via a GROUP BY clause. In SQL logical query processing, FROM and WHERE execute first to narrow down the dataset, followed by GROUP BY, then HAVING evaluates the aggregated groups, and finally SELECT and ORDER BY execute.",
               criteria: [
                 "Identified row-level filtering (WHERE) vs. aggregated group filtering (HAVING)",
                 "Specified that HAVING requires or follows GROUP BY",
-                "Accurately mapped the logical query execution order"
-              ]
-            }
-          }
+                "Accurately mapped the logical query execution order",
+              ],
+            },
+          },
         },
 
         cyber: {
@@ -653,25 +793,29 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Describe how you prioritize multiple high-severity security alerts that trigger simultaneously across different departments.",
-              model: "When alerts trigger concurrently, I triage based on data sensitivity and threat containment potential. First, I identify the asset tier: an alert involving our production database or domain controller immediately supersedes a standard workstation alert. Second, I look for indicators of active lateral movement or data exfiltration. If a workstation shows command-and-control beaconing, I isolate that host from the network immediately via our EDR console to stop propagation, before pivoting my full attention to deeper packet analysis on the domain controller.",
+              prompt:
+                "Describe how you prioritize multiple high-severity security alerts that trigger simultaneously across different departments.",
+              model:
+                "When alerts trigger concurrently, I triage based on data sensitivity and threat containment potential. First, I identify the asset tier: an alert involving our production database or domain controller immediately supersedes a standard workstation alert. Second, I look for indicators of active lateral movement or data exfiltration. If a workstation shows command-and-control beaconing, I isolate that host from the network immediately via our EDR console to stop propagation, before pivoting my full attention to deeper packet analysis on the domain controller.",
               criteria: [
                 "Established a clear triage framework based on asset criticality",
                 "Took immediate containment action (e.g., host isolation) to stop lateral movement",
-                "Demonstrated composure and structured threat escalation"
-              ]
+                "Demonstrated composure and structured threat escalation",
+              ],
             },
             technical: {
-              prompt: "What is the difference between symmetric and asymmetric encryption? Where is each typically applied during an HTTPS handshake?",
-              model: "Symmetric encryption uses a single shared secret key to both encrypt and decrypt data. It is computationally very fast, making it ideal for bulk data transfer. Asymmetric encryption uses a mathematically linked public-private key pair: data encrypted with the public key can only be decrypted by the private key. It is slower and computationally expensive. During an HTTPS/TLS handshake, asymmetric encryption is used first to authenticate the server's identity via its certificate and securely exchange a session key. Once agreed upon, both client and server switch to symmetric encryption using that session key for the actual payload data.",
+              prompt:
+                "What is the difference between symmetric and asymmetric encryption? Where is each typically applied during an HTTPS handshake?",
+              model:
+                "Symmetric encryption uses a single shared secret key to both encrypt and decrypt data. It is computationally very fast, making it ideal for bulk data transfer. Asymmetric encryption uses a mathematically linked public-private key pair: data encrypted with the public key can only be decrypted by the private key. It is slower and computationally expensive. During an HTTPS/TLS handshake, asymmetric encryption is used first to authenticate the server's identity via its certificate and securely exchange a session key. Once agreed upon, both client and server switch to symmetric encryption using that session key for the actual payload data.",
               criteria: [
                 "Differentiated single shared key vs. public/private key pair",
                 "Explained the speed/computational efficiency trade-off",
-                "Accurately explained their role in TLS/HTTPS handshakes"
-              ]
-            }
-          }
-        }
+                "Accurately explained their role in TLS/HTTPS handshakes",
+              ],
+            },
+          },
+        },
       };
 
       // Tab Switching Logic
@@ -684,7 +828,7 @@
         discSec.style.display = "none";
         quizSec.style.display = "none";
         prepSec.style.display = "none";
-        tabs.forEach(t => t.classList.remove("active"));
+        tabs.forEach((t) => t.classList.remove("active"));
 
         if (tab === "discovery") {
           discSec.style.display = "block";
@@ -726,8 +870,12 @@
         const type = document.getElementById("prepTypeSelect").value;
         const qData = careerData[role].interview[type];
 
-        document.getElementById("questionHeading").textContent = `${type.toUpperCase()} INTERVIEW QUESTION`;
+        document.getElementById("questionHeading").textContent =
+          `${type.toUpperCase()} INTERVIEW QUESTION`;
         document.getElementById("questionText").textContent = qData.prompt;
+        document.getElementById("interviewTipText").innerHTML =
+          qData.tip ||
+          "Think about what the interviewer is trying to evaluate and support your answer with a specific example.";
         document.getElementById("userResponse").value = "";
         document.getElementById("feedbackContainer").style.display = "none";
       }
@@ -735,7 +883,9 @@
       function evaluateAnswer() {
         const userText = document.getElementById("userResponse").value.trim();
         if (!userText) {
-          alert("Please write your answer attempt before revealing the strong answer!");
+          alert(
+            "Please write your answer attempt before revealing the strong answer!",
+          );
           return;
         }
 
@@ -764,73 +914,126 @@
       // Quiz Engine
       const quizQuestions = [
         {
-          question: "When tackling a technical problem, which activity sounds most appealing?",
+          question:
+            "When tackling a technical problem, which activity sounds most appealing?",
           options: [
-            { text: "Writing modular code, fixing syntax bugs, and optimizing logic", role: "software" },
-            { text: "Mapping out user flows and aligning technical requirements with business goals", role: "business" },
-            { text: "Querying raw databases, finding statistical trends, and building visual charts", role: "data" },
-            { text: "Investigating network vulnerabilities, analyzing packet logs, and stopping threats", role: "cyber" }
-          ]
+            {
+              text: "Writing modular code, fixing syntax bugs, and optimizing logic",
+              role: "software",
+            },
+            {
+              text: "Mapping out user flows and aligning technical requirements with business goals",
+              role: "business",
+            },
+            {
+              text: "Querying raw databases, finding statistical trends, and building visual charts",
+              role: "data",
+            },
+            {
+              text: "Investigating network vulnerabilities, analyzing packet logs, and stopping threats",
+              role: "cyber",
+            },
+          ],
         },
         {
-          question: "Which work environment aligns best with your natural work style?",
+          question:
+            "Which work environment aligns best with your natural work style?",
           options: [
-            { text: "Deep focus blocks engineering features, writing tests, and reviewing pull requests", role: "software" },
-            { text: "High collaboration, facilitating stakeholder interviews, and running standups", role: "business" },
-            { text: "Independent analytical research, discovering actionable ROI insights for leadership", role: "data" },
-            { text: "Fast-paced incident triage where quick thinking protects critical assets", role: "cyber" }
-          ]
+            {
+              text: "Deep focus blocks engineering features, writing tests, and reviewing pull requests",
+              role: "software",
+            },
+            {
+              text: "High collaboration, facilitating stakeholder interviews, and running standups",
+              role: "business",
+            },
+            {
+              text: "Independent analytical research, discovering actionable ROI insights for leadership",
+              role: "data",
+            },
+            {
+              text: "Fast-paced incident triage where quick thinking protects critical assets",
+              role: "cyber",
+            },
+          ],
         },
         {
-          question: "Which toolkit or software stack would you enjoy mastering the most?",
+          question:
+            "Which toolkit or software stack would you enjoy mastering the most?",
           options: [
-            { text: "C#, Python, JavaScript, Git, and Docker", role: "software" },
-            { text: "Jira, Lucidchart, Agile/Scrum process diagrams, and SQL", role: "business" },
-            { text: "Advanced SQL, Tableau, Power BI, and Python (pandas/numpy)", role: "data" },
-            { text: "Wireshark, Splunk, Linux command line, and network protocols", role: "cyber" }
-          ]
-        }
+            {
+              text: "C#, Python, JavaScript, Git, and Docker",
+              role: "software",
+            },
+            {
+              text: "Jira, Lucidchart, Agile/Scrum process diagrams, and SQL",
+              role: "business",
+            },
+            {
+              text: "Advanced SQL, Tableau, Power BI, and Python (pandas/numpy)",
+              role: "data",
+            },
+            {
+              text: "Wireshark, Splunk, Linux command line, and network protocols",
+              role: "cyber",
+            },
+          ],
+        },
       ];
 
       const careerResults = {
         software: {
           title: "Software / Application Developer",
-          summary: "You are a builder who thrives on structural logic, algorithmic problem-solving, and crafting functional digital products."
+          summary:
+            "You are a builder who thrives on structural logic, algorithmic problem-solving, and crafting functional digital products.",
         },
         business: {
           title: "Business / Systems Analyst",
-          summary: "You are a strategic communicator who excels at bridging the gap between business objectives and technical implementation."
+          summary:
+            "You are a strategic communicator who excels at bridging the gap between business objectives and technical implementation.",
         },
         data: {
           title: "Data Analyst / Data Scientist",
-          summary: "You are an analytical detective who loves deriving actionable business clarity from complex and untidy datasets."
+          summary:
+            "You are an analytical detective who loves deriving actionable business clarity from complex and untidy datasets.",
         },
         cyber: {
           title: "Cybersecurity Analyst",
-          summary: "You are a guardian who thrives in risk analysis, system architecture security, and fast-paced incident mitigation."
-        }
+          summary:
+            "You are a guardian who thrives in risk analysis, system architecture security, and fast-paced incident mitigation.",
+        },
       };
 
       function initQuiz() {
         const container = document.getElementById("quizQuestionsContainer");
-        container.innerHTML = quizQuestions.map((q, qIndex) => `
+        container.innerHTML = quizQuestions
+          .map(
+            (q, qIndex) => `
           <div style="margin-bottom: 22px; padding: 18px; background: #fafbfc; border: 1px solid var(--border-color); border-radius: 8px;">
             <p style="font-weight: bold; margin-top: 0; color: var(--byu-navy);">${qIndex + 1}. ${q.question}</p>
-            ${q.options.map(opt => `
+            ${q.options
+              .map(
+                (opt) => `
               <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 14px; font-weight: normal; color: var(--text-dark);">
                 <input type="radio" name="question_${qIndex}" value="${opt.role}" style="margin-right: 10px;">
                 ${opt.text}
               </label>
-            `).join("")}
+            `,
+              )
+              .join("")}
           </div>
-        `).join("");
+        `,
+          )
+          .join("");
       }
 
       function submitQuiz() {
         const scores = { software: 0, business: 0, data: 0, cyber: 0 };
 
         for (let i = 0; i < quizQuestions.length; i++) {
-          const selected = document.querySelector(`input[name="question_${i}"]:checked`);
+          const selected = document.querySelector(
+            `input[name="question_${i}"]:checked`,
+          );
           if (!selected) {
             alert(`Please answer question ${i + 1} before submitting!`);
             return;
@@ -862,6 +1065,58 @@
 
       // Initialize quiz on load
       initQuiz();
+      // Voice Recording
+      let mediaRecorder;
+      let audioChunks = [];
+      let recordingStream;
+
+      async function startRecording() {
+        try {
+          recordingStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+          });
+
+          mediaRecorder = new MediaRecorder(recordingStream);
+          audioChunks = [];
+
+          mediaRecorder.ondataavailable = function (event) {
+            audioChunks.push(event.data);
+          };
+
+          mediaRecorder.onstop = function () {
+            const audioBlob = new Blob(audioChunks, {
+              type: mediaRecorder.mimeType,
+            });
+            const audioURL = URL.createObjectURL(audioBlob);
+
+            document.getElementById("recordedAudio").src = audioURL;
+            document.getElementById("audioPlayback").style.display = "block";
+
+            recordingStream.getTracks().forEach((track) => track.stop());
+          };
+
+          mediaRecorder.start();
+
+          document.getElementById("recordBtn").disabled = true;
+          document.getElementById("stopBtn").disabled = false;
+          document.getElementById("recordingStatus").textContent =
+            "🔴 Recording...";
+        } catch (error) {
+          alert("Microphone access is required to record your answer.");
+          console.error(error);
+        }
+      }
+
+      function stopRecording() {
+        if (mediaRecorder && mediaRecorder.state === "recording") {
+          mediaRecorder.stop();
+
+          document.getElementById("recordBtn").disabled = false;
+          document.getElementById("stopBtn").disabled = true;
+          document.getElementById("recordingStatus").textContent =
+            "Recording complete!";
+        }
+      }
     </script>
   </body>
 </html>
