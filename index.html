@@ -3,19 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IS Career Launchpad & Interactive Explorer</title>
+    <title>IS Career Launchpad</title>
 
     <style>
       :root {
-<<<<<<< HEAD
-        --primary: #002e5d;
-        --secondary: #0062b8;
-        --accent: #00a8cc;
-        --bg: #f4f7f9;
-        --card-bg: #ffffff;
-        --text: #2c3e50;
-        --success: #2e7d32;
-=======
         --byu-navy: #002e5d;
         --byu-royal: #0062b8;
         --byu-hover: #004f93;
@@ -23,25 +14,11 @@
         --card-bg: #ffffff;
         --text-dark: #222222;
         --border-color: #e2e8f0;
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
       }
 
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Arial, sans-serif;
         margin: 0;
-<<<<<<< HEAD
-        background-color: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      header {
-        background: linear-gradient(135deg, var(--primary), #001f3f);
-        color: white;
-        text-align: center;
-        padding: 50px 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-=======
         background-color: var(--bg-gray);
         color: var(--text-dark);
         line-height: 1.5;
@@ -52,25 +29,10 @@
         color: white;
         text-align: center;
         padding: 40px 20px 20px 20px;
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
       }
 
       header h1 {
         margin: 0;
-<<<<<<< HEAD
-        font-size: 2.6rem;
-      }
-
-      header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-        margin-top: 10px;
-      }
-
-      main {
-        max-width: 1200px;
-        margin: 30px auto;
-=======
         font-size: 38px;
         letter-spacing: -0.5px;
       }
@@ -114,75 +76,14 @@
       main {
         max-width: 1100px;
         margin: 35px auto 60px auto;
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
         padding: 0 20px;
       }
 
-      /* Step 1: Interactive Industry Filter Bar */
-      .filter-section {
-        background: var(--card-bg);
-        padding: 20px 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      .section-title {
+        text-align: center;
         margin-bottom: 30px;
       }
 
-<<<<<<< HEAD
-      .filter-title {
-        font-weight: bold;
-        color: var(--primary);
-        margin-bottom: 12px;
-        font-size: 1.1rem;
-      }
-
-      .filter-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .filter-btn {
-        background-color: #e9ecef;
-        color: var(--text);
-        border: 2px solid transparent;
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.2s ease;
-      }
-
-      .filter-btn:hover {
-        background-color: #dee2e6;
-      }
-
-      .filter-btn.active {
-        background-color: var(--secondary);
-        color: white;
-        border-color: var(--primary);
-      }
-
-      /* Flowchart Layout */
-      .flowchart-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .flow-row {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-        gap: 20px;
-      }
-
-      .flow-card {
-        background-color: var(--card-bg);
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        border-top: 5px solid var(--secondary);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-=======
       .section-title h2 {
         color: var(--byu-navy);
         margin-bottom: 8px;
@@ -201,48 +102,11 @@
         border-radius: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         border-top: 4px solid var(--byu-navy);
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
         display: flex;
         flex-direction: column;
         justify-content: space-between;
       }
 
-<<<<<<< HEAD
-      .flow-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      }
-
-      .badge {
-        display: inline-block;
-        background: #e1f0ff;
-        color: var(--secondary);
-        padding: 4px 10px;
-        border-radius: 15px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .flow-card h3 {
-        color: var(--primary);
-        margin: 5px 0 10px 0;
-      }
-
-      .salary-tag {
-        font-weight: bold;
-        color: var(--success);
-        background: #e8f5e9;
-        padding: 6px 10px;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        margin: 10px 0 15px 0;
-        display: inline-block;
-      }
-
-      button.explore-btn {
-        background-color: var(--secondary);
-=======
       .career-card h3 {
         color: var(--byu-navy);
         margin-top: 0;
@@ -250,24 +114,11 @@
 
       button.primary-btn {
         background-color: var(--byu-royal);
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
         color: white;
         border: none;
-        padding: 10px 16px;
-        border-radius: 6px;
+        padding: 10px 18px;
+        border-radius: 5px;
         cursor: pointer;
-<<<<<<< HEAD
-        font-weight: 600;
-        width: 100%;
-        transition: background-color 0.2s;
-      }
-
-      button.explore-btn:hover {
-        background-color: #004f93;
-      }
-
-      /* Modal Viewport Style */
-=======
         font-size: 15px;
         font-weight: 600;
         transition: background-color 0.2s ease;
@@ -382,7 +233,6 @@
       }
 
       /* Modal styling */
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
       .modal {
         display: none;
         position: fixed;
@@ -391,94 +241,39 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
+        background-color: rgba(0, 0, 0, 0.55);
         overflow: auto;
       }
 
       .modal-content {
         background-color: white;
-<<<<<<< HEAD
-        width: 90%;
-        max-width: 850px;
-        margin: 40px auto;
-=======
         width: 85%;
         max-width: 850px;
         margin: 50px auto;
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
         padding: 35px;
-        border-radius: 16px;
+        border-radius: 12px;
         position: relative;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-        animation: slideDown 0.3s ease-out;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
       }
 
-<<<<<<< HEAD
-      @keyframes slideDown {
-        from { transform: translateY(-30px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-=======
       .modal-content h2, .modal-content h3 {
         color: var(--byu-navy);
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
       }
 
       .close {
         position: absolute;
         right: 25px;
-        top: 20px;
-        font-size: 28px;
+        top: 18px;
+        font-size: 32px;
         font-weight: bold;
-        color: #888;
+        color: #555;
         cursor: pointer;
       }
 
       .close:hover {
-        color: #000;
+        color: black;
       }
 
-<<<<<<< HEAD
-      /* Detailed Flowchart Progression Steps */
-      .trajectory-path {
-        border-left: 3px solid var(--secondary);
-        padding-left: 20px;
-        margin: 20px 0;
-      }
-
-      .trajectory-step {
-        position: relative;
-        margin-bottom: 20px;
-      }
-
-      .trajectory-step::before {
-        content: '';
-        position: absolute;
-        left: -27px;
-        top: 5px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background: var(--secondary);
-      }
-
-      .trajectory-step h4 {
-        margin: 0;
-        color: var(--primary);
-      }
-
-      .grid-two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      @media (max-width: 768px) {
-        .grid-two-col {
-          grid-template-columns: 1fr;
-        }
-        .modal-content {
-=======
       .data-badge {
         display: inline-block;
         background: #e2e8f0;
@@ -495,7 +290,6 @@
         }
         .modal-content {
           width: 90%;
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
           padding: 20px;
         }
       }
@@ -504,37 +298,6 @@
 
   <body>
     <header>
-<<<<<<< HEAD
-      <h1>IS Career Launchpad & Industry Explorer</h1>
-      <p>Filter sectors, trace progression flowcharts, and analyze career expectations.</p>
-    </header>
-
-    <main>
-      <div class="filter-section">
-        <div class="filter-title">1. Select Target Industry Sector:</div>
-        <div class="filter-buttons">
-          <button class="filter-btn active" onclick="filterCategory('all')">All Pathways</button>
-          <button class="filter-btn" onclick="filterCategory('tech')">Software & Cloud Tech</button>
-          <button class="filter-btn" onclick="filterCategory('finance')">FinTech & Financial Services</button>
-          <button class="filter-btn" onclick="filterCategory('health')">Healthcare & BioTech</button>
-          <button class="filter-btn" onclick="filterCategory('consulting')">Consulting & IT Services</button>
-        </div>
-      </div>
-
-      <div class="filter-title">2. Choose a Specific Role Pathway:</div>
-      <div class="flowchart-container">
-        <div class="flow-row" id="cardContainer">
-          </div>
-      </div>
-    </main>
-
-    <div id="careerModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeCareer()">&times;</span>
-        <h2 id="detail-title" style="color: var(--primary); margin-top:0;"></h2>
-        <p id="detail-industry" style="font-weight:bold; color: var(--secondary);"></p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
-=======
       <h1>IS Career Launchpad</h1>
       <p>Explore high-impact IS career paths and practice realistic interviews.</p>
       <nav class="tab-nav">
@@ -660,40 +423,14 @@
       <div class="modal-content">
         <span class="close" onclick="closeCareer()">&times;</span>
         <h2 id="detail-title"></h2>
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
         <div id="detail-content"></div>
       </div>
     </div>
 
     <script>
-      const careerData = [
-        {
-          id: "software",
-          categories: ["tech", "finance"],
+      const careerData = {
+        software: {
           title: "Software / Application Developer",
-<<<<<<< HEAD
-          badge: "Engineering & Architecture",
-          industryText: "Primary Industries: Big Tech, FinTech, SaaS, eCommerce",
-          shortDesc: "Build, test, and maintain web, mobile, and cloud software applications.",
-          salaryRange: "$75,000 - $155,000+ / yr",
-          dailyTasks: [
-            "Write, test, and deploy clean, maintainable code",
-            "Debug production issues and optimize legacy systems",
-            "Participate in daily Agile/Scrum standups and code reviews",
-            "Collaborate with UX designers and system architects"
-          ],
-          skills: [
-            "Languages: Python, Java, JavaScript/TypeScript, or C#",
-            "Databases: PostgreSQL, MySQL, MongoDB",
-            "Tools: Git, GitHub/GitLab, Docker, REST APIs",
-            "Frameworks: React, Node.js, Spring Boot, or .NET"
-          ],
-          entryLevelExpectations: [
-            "Proficiency in at least one object-oriented or functional language",
-            "Fundamental understanding of Data Structures and Algorithms",
-            "Ability to write basic SQL queries and perform version control (Git)",
-            "A portfolio of personal projects, coursework
-=======
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Software developers design, write, test, and deploy software applications. They translate functional requirements into scalable, reliable production code.</p>
@@ -1128,4 +865,3 @@
     </script>
   </body>
 </html>
->>>>>>> a969a15f61a23e65ecd1c055e03ccd79896decab
