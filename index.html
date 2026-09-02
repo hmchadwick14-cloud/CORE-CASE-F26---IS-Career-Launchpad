@@ -415,6 +415,56 @@
             </div>
           </div>
         </div>
+      </div>
+      <section id="interview-section" style="margin-top: 60px">
+        <div class="section-title">
+          <h2>Mock Interview Practice</h2>
+          <p>Select a career and practice role-specific interview questions.</p>
+        </div>
+
+        <div class="career-card">
+          <label for="career-select"><strong>Select a Career:</strong></label>
+          <br /><br />
+
+          <select id="career-select" onchange="loadInterview()">
+            <option value="">Choose a career</option>
+            <option value="software">Software / Application Developer</option>
+            <option value="business">Business / Systems Analyst</option>
+            <option value="data">Data Analyst / Data Scientist</option>
+            <option value="cyber">Cybersecurity Analyst</option>
+          </select>
+
+          <div id="interview-box" style="display: none; margin-top: 30px">
+            <p>
+              <strong>Question Type:</strong> <span id="question-type"></span>
+            </p>
+
+            <h3 id="interview-question"></h3>
+
+            <textarea
+              id="user-answer"
+              rows="7"
+              style="width: 100%; padding: 12px; box-sizing: border-box"
+              placeholder="Type your answer here..."
+            ></textarea>
+
+            <br /><br />
+
+            <button onclick="showFeedback()">Show Feedback</button>
+            <button onclick="nextQuestion()">Next Question</button>
+
+            <div
+              id="feedback-box"
+              style="
+                display: none;
+                margin-top: 25px;
+                padding: 20px;
+                background: #eef4fa;
+                border-radius: 8px;
+              "
+            ></div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -720,148 +770,175 @@
         }
       };
 
-      // Interview Prep Engine
-      function loadInterviewQuestion() {
-        const role = document.getElementById("prepRoleSelect").value;
-        const type = document.getElementById("prepTypeSelect").value;
-        const qData = careerData[role].interview[type];
+      const interviewData = {
+        software: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you solved a difficult technical problem.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Use the STAR structure: Situation, Task, Action, Result</li>
+          <li>Clearly explain the technical problem</li>
+          <li>Describe your specific contribution</li>
+          <li>Explain how you tested or validated the solution</li>
+          <li>End with a measurable or clear result</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "What is the difference between an array and a linked list?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Arrays store elements in contiguous memory</li>
+          <li>Linked lists use nodes connected by references</li>
+          <li>Arrays allow fast indexed access</li>
+          <li>Linked lists can make insertions and deletions easier in some cases</li>
+        </ul>
+      `,
+          },
+        ],
 
-        document.getElementById("questionHeading").textContent = `${type.toUpperCase()} INTERVIEW QUESTION`;
-        document.getElementById("questionText").textContent = qData.prompt;
-        document.getElementById("userResponse").value = "";
-        document.getElementById("feedbackContainer").style.display = "none";
-      }
+        business: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you worked with someone who had different priorities than you.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the disagreement clearly</li>
+          <li>Show how you listened to the other person's needs</li>
+          <li>Explain how you reached alignment</li>
+          <li>Describe the final business outcome</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "How would you gather requirements for a new information system?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Identify stakeholders</li>
+          <li>Conduct interviews or workshops</li>
+          <li>Document functional and non-functional requirements</li>
+          <li>Prioritize requirements</li>
+          <li>Validate requirements with stakeholders</li>
+        </ul>
+      `,
+          },
+        ],
 
-      function evaluateAnswer() {
-        const userText = document.getElementById("userResponse").value.trim();
-        if (!userText) {
-          alert("Please write your answer attempt before revealing the strong answer!");
+        data: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you used data to make a recommendation.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the business question</li>
+          <li>Describe the data you used</li>
+          <li>Explain your analysis</li>
+          <li>Describe the recommendation</li>
+          <li>Explain the result or impact</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question:
+              "What is the difference between INNER JOIN and LEFT JOIN in SQL?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>INNER JOIN returns only matching rows from both tables</li>
+          <li>LEFT JOIN returns all rows from the left table</li>
+          <li>Unmatched right-table values appear as NULL in a LEFT JOIN</li>
+        </ul>
+      `,
+          },
+        ],
+
+        cyber: [
+          {
+            type: "Behavioral",
+            question:
+              "Tell me about a time you had to respond quickly to a problem.",
+            feedback: `
+        <h4>Strong Answer Should Include:</h4>
+        <ul>
+          <li>Explain the urgent situation</li>
+          <li>Describe how you prioritized actions</li>
+          <li>Show calm decision-making</li>
+          <li>Explain the result</li>
+        </ul>
+      `,
+          },
+          {
+            type: "Technical",
+            question: "What is the principle of least privilege?",
+            feedback: `
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Users receive only the access they need</li>
+          <li>Access should be limited by role and responsibility</li>
+          <li>It reduces the impact of compromised accounts</li>
+          <li>Permissions should be reviewed regularly</li>
+        </ul>
+      `,
+          },
+        ],
+      };
+
+      let currentCareer = "";
+      let currentQuestion = 0;
+
+      function loadInterview() {
+        currentCareer = document.getElementById("career-select").value;
+        currentQuestion = 0;
+
+        if (!currentCareer) {
+          document.getElementById("interview-box").style.display = "none";
           return;
         }
 
-        const role = document.getElementById("prepRoleSelect").value;
-        const type = document.getElementById("prepTypeSelect").value;
-        const qData = careerData[role].interview[type];
-
-        document.getElementById("modelAnswerText").textContent = qData.model;
-
-        const checklistDiv = document.getElementById("checklistItems");
-        checklistDiv.innerHTML = "";
-
-        qData.criteria.forEach((item, index) => {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "checklist-item";
-          itemDiv.innerHTML = `
-            <input type="checkbox" id="check_${index}">
-            <label for="check_${index}" style="margin: 0; font-weight: normal; cursor: pointer;">${item}</label>
-          `;
-          checklistDiv.appendChild(itemDiv);
-        });
-
-        document.getElementById("feedbackContainer").style.display = "block";
+        document.getElementById("interview-box").style.display = "block";
+        displayQuestion();
       }
 
-      // Quiz Engine
-      const quizQuestions = [
-        {
-          question: "When tackling a technical problem, which activity sounds most appealing?",
-          options: [
-            { text: "Writing modular code, fixing syntax bugs, and optimizing logic", role: "software" },
-            { text: "Mapping out user flows and aligning technical requirements with business goals", role: "business" },
-            { text: "Querying raw databases, finding statistical trends, and building visual charts", role: "data" },
-            { text: "Investigating network vulnerabilities, analyzing packet logs, and stopping threats", role: "cyber" }
-          ]
-        },
-        {
-          question: "Which work environment aligns best with your natural work style?",
-          options: [
-            { text: "Deep focus blocks engineering features, writing tests, and reviewing pull requests", role: "software" },
-            { text: "High collaboration, facilitating stakeholder interviews, and running standups", role: "business" },
-            { text: "Independent analytical research, discovering actionable ROI insights for leadership", role: "data" },
-            { text: "Fast-paced incident triage where quick thinking protects critical assets", role: "cyber" }
-          ]
-        },
-        {
-          question: "Which toolkit or software stack would you enjoy mastering the most?",
-          options: [
-            { text: "C#, Python, JavaScript, Git, and Docker", role: "software" },
-            { text: "Jira, Lucidchart, Agile/Scrum process diagrams, and SQL", role: "business" },
-            { text: "Advanced SQL, Tableau, Power BI, and Python (pandas/numpy)", role: "data" },
-            { text: "Wireshark, Splunk, Linux command line, and network protocols", role: "cyber" }
-          ]
-        }
-      ];
+      function displayQuestion() {
+        const question = interviewData[currentCareer][currentQuestion];
 
-      const careerResults = {
-        software: {
-          title: "Software / Application Developer",
-          summary: "You are a builder who thrives on structural logic, algorithmic problem-solving, and crafting functional digital products."
-        },
-        business: {
-          title: "Business / Systems Analyst",
-          summary: "You are a strategic communicator who excels at bridging the gap between business objectives and technical implementation."
-        },
-        data: {
-          title: "Data Analyst / Data Scientist",
-          summary: "You are an analytical detective who loves deriving actionable business clarity from complex and untidy datasets."
-        },
-        cyber: {
-          title: "Cybersecurity Analyst",
-          summary: "You are a guardian who thrives in risk analysis, system architecture security, and fast-paced incident mitigation."
-        }
-      };
-
-      function initQuiz() {
-        const container = document.getElementById("quizQuestionsContainer");
-        container.innerHTML = quizQuestions.map((q, qIndex) => `
-          <div style="margin-bottom: 22px; padding: 18px; background: #fafbfc; border: 1px solid var(--border-color); border-radius: 8px;">
-            <p style="font-weight: bold; margin-top: 0; color: var(--byu-navy);">${qIndex + 1}. ${q.question}</p>
-            ${q.options.map(opt => `
-              <label style="display: block; margin-bottom: 10px; cursor: pointer; font-size: 14px; font-weight: normal; color: var(--text-dark);">
-                <input type="radio" name="question_${qIndex}" value="${opt.role}" style="margin-right: 10px;">
-                ${opt.text}
-              </label>
-            `).join("")}
-          </div>
-        `).join("");
+        document.getElementById("question-type").textContent = question.type;
+        document.getElementById("interview-question").textContent =
+          question.question;
+        document.getElementById("user-answer").value = "";
+        document.getElementById("feedback-box").style.display = "none";
       }
 
-      function submitQuiz() {
-        const scores = { software: 0, business: 0, data: 0, cyber: 0 };
+      function showFeedback() {
+        const question = interviewData[currentCareer][currentQuestion];
 
-        for (let i = 0; i < quizQuestions.length; i++) {
-          const selected = document.querySelector(`input[name="question_${i}"]:checked`);
-          if (!selected) {
-            alert(`Please answer question ${i + 1} before submitting!`);
-            return;
-          }
-          scores[selected.value]++;
-        }
-
-        let bestRole = "software";
-        let maxScore = -1;
-        for (const role in scores) {
-          if (scores[role] > maxScore) {
-            maxScore = scores[role];
-            bestRole = role;
-          }
-        }
-
-        const resultData = careerResults[bestRole];
-        const resultCard = document.getElementById("quizResult");
-        resultCard.innerHTML = `
-          <h3 style="color: var(--byu-navy); margin-top: 0;">Top Match: ${resultData.title}</h3>
-          <p style="color: #334155; line-height: 1.5;">${resultData.summary}</p>
-          <button class="primary-btn" onclick="showCareer('${bestRole}')" style="margin-top: 10px;">
-            View Full ${resultData.title} Profile
-          </button>
-        `;
-        resultCard.style.display = "block";
-        resultCard.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("feedback-box").innerHTML = question.feedback;
+        document.getElementById("feedback-box").style.display = "block";
       }
 
-      // Initialize quiz on load
-      initQuiz();
+      function nextQuestion() {
+        currentQuestion++;
+
+        if (currentQuestion >= interviewData[currentCareer].length) {
+          currentQuestion = 0;
+        }
+
+        displayQuestion();
+      }
     </script>
   </body>
 </html>
