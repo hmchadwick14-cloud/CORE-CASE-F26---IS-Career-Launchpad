@@ -1280,14 +1280,22 @@
           qData.tip ||
           "Think about what the interviewer is trying to evaluate and support your answer with a specific example.";
         document.getElementById("userResponse").value = "";
+        document.getElementById("recordedAudio").src = "";
+        document.getElementById("audioPlayback").style.display = "none";
+        document.getElementById("recordingStatus").textContent = "";
         document.getElementById("feedbackContainer").style.display = "none";
       }
 
       function evaluateAnswer() {
         const userText = document.getElementById("userResponse").value.trim();
-        if (!userText) {
+
+        const hasRecording =
+          document.getElementById("recordedAudio").src &&
+          document.getElementById("audioPlayback").style.display !== "none";
+
+        if (!userText && !hasRecording) {
           alert(
-            "Please write your answer attempt before revealing the strong answer!",
+            "Please type your answer or record a spoken answer before revealing the strong answer!",
           );
           return;
         }
