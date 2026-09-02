@@ -6,33 +6,76 @@
     <title>IS Career Launchpad</title>
 
     <style>
+      :root {
+        --byu-navy: #002e5d;
+        --byu-royal: #0062b8;
+        --byu-hover: #004f93;
+        --bg-gray: #f5f7fa;
+        --card-bg: #ffffff;
+        --text-dark: #222222;
+        --border-color: #e2e8f0;
+      }
+
       body {
         font-family: Arial, sans-serif;
         margin: 0;
-        background-color: #f5f7fa;
-        color: #222;
+        background-color: var(--bg-gray);
+        color: var(--text-dark);
+        line-height: 1.5;
       }
 
       header {
-        background-color: #002e5d;
+        background-color: var(--byu-navy);
         color: white;
         text-align: center;
-        padding: 50px 20px;
+        padding: 40px 20px 20px 20px;
       }
 
       header h1 {
         margin: 0;
-        font-size: 42px;
+        font-size: 38px;
+        letter-spacing: -0.5px;
       }
 
       header p {
-        font-size: 18px;
-        margin-top: 12px;
+        font-size: 17px;
+        margin: 10px 0 25px 0;
+        opacity: 0.9;
+      }
+
+      /* Navigation Tabs */
+      .tab-nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .tab-btn {
+        background-color: rgba(255, 255, 255, 0.15);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 10px 22px;
+        font-size: 15px;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .tab-btn:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+
+      .tab-btn.active {
+        background-color: white;
+        color: var(--byu-navy);
+        border-color: white;
       }
 
       main {
         max-width: 1100px;
-        margin: 40px auto;
+        margin: 35px auto 60px auto;
         padding: 0 20px;
       }
 
@@ -41,6 +84,12 @@
         margin-bottom: 30px;
       }
 
+      .section-title h2 {
+        color: var(--byu-navy);
+        margin-bottom: 8px;
+      }
+
+      /* Module 1 Layout */
       .career-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -48,31 +97,142 @@
       }
 
       .career-card {
-        background-color: white;
-        padding: 25px;
+        background-color: var(--card-bg);
+        padding: 24px;
         border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        border-top: 4px solid var(--byu-navy);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
       }
 
       .career-card h3 {
-        color: #002e5d;
+        color: var(--byu-navy);
+        margin-top: 0;
       }
 
-      button {
-        background-color: #0062b8;
+      button.primary-btn {
+        background-color: var(--byu-royal);
         color: white;
         border: none;
         padding: 10px 18px;
         border-radius: 5px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 15px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
       }
 
-      button:hover {
-        background-color: #004f93;
+      button.primary-btn:hover {
+        background-color: var(--byu-hover);
       }
 
-      /* Modal background */
+      .career-card button.primary-btn {
+        align-self: flex-start;
+      }
+
+      /* Panel Containers */
+      .panel-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 30px;
+      }
+
+      /* Controls */
+      .controls-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      label {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--byu-navy);
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid var(--border-color);
+        font-size: 15px;
+        background-color: #fafbfc;
+      }
+
+      .question-box {
+        background: #eef4fa;
+        border-left: 4px solid var(--byu-royal);
+        padding: 16px 20px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .question-box h4 {
+        margin: 0 0 6px 0;
+        color: var(--byu-navy);
+      }
+
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 130px;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 15px;
+        resize: vertical;
+        margin-bottom: 15px;
+      }
+
+      /* Feedback Boxes */
+      .feedback-box {
+        display: none;
+        margin-top: 25px;
+        padding-top: 20px;
+        border-top: 2px dashed var(--border-color);
+      }
+
+      .strong-answer-card {
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+        padding: 18px;
+        margin-bottom: 20px;
+      }
+
+      .strong-answer-card h4 {
+        color: #166534;
+        margin-top: 0;
+      }
+
+      .rubric-checklist {
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 18px;
+      }
+
+      .rubric-checklist h4 {
+        margin-top: 0;
+        color: var(--byu-navy);
+      }
+
+      .checklist-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      /* Modal styling */
       .modal {
         display: none;
         position: fixed;
@@ -85,26 +245,19 @@
         overflow: auto;
       }
 
-      /* Modal box */
       .modal-content {
         background-color: white;
-        width: 80%;
+        width: 85%;
         max-width: 850px;
-        margin: 60px auto;
+        margin: 50px auto;
         padding: 35px;
         border-radius: 12px;
         position: relative;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
       }
 
-      .modal-content h2 {
-        color: #002e5d;
-        margin-top: 0;
-      }
-
-      .modal-content h3 {
-        color: #002e5d;
-        margin-top: 25px;
+      .modal-content h2, .modal-content h3 {
+        color: var(--byu-navy);
       }
 
       .close {
@@ -121,15 +274,23 @@
         color: black;
       }
 
-      @media (max-width: 700px) {
+      .data-badge {
+        display: inline-block;
+        background: #e2e8f0;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #334155;
+        margin-top: 6px;
+      }
+
+      @media (max-width: 768px) {
         .career-container {
           grid-template-columns: 1fr;
         }
-
         .modal-content {
-          width: 85%;
-          margin: 30px auto;
-          padding: 25px;
+          width: 90%;
+          padding: 20px;
         }
       }
     </style>
@@ -138,41 +299,121 @@
   <body>
     <header>
       <h1>IS Career Launchpad</h1>
-      <p>Explore your career. Prepare for your interview.</p>
+      <p>Explore high-impact IS career paths and practice realistic interviews.</p>
+      <nav class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('discovery')">Career Path Discovery</button>
+        <button class="tab-btn" onclick="switchTab('quiz')">Career Match Quiz</button>
+        <button class="tab-btn" onclick="switchTab('interview')">Interview Prep Simulator</button>
+      </nav>
     </header>
 
     <main>
-      <div class="section-title">
-        <h2>Explore IS Career Paths</h2>
-        <p>
-          Select a career to learn about the role, skills, and interview
-          expectations.
-        </p>
-      </div>
-
-      <div class="career-container">
-        <div class="career-card">
-          <h3>Software / Application Developer</h3>
-          <p>Build, test, and maintain software applications.</p>
-          <button onclick="showCareer('software')">Explore Career</button>
+      <!-- TAB 1: CAREER DISCOVERY -->
+      <section id="discoverySection">
+        <div class="section-title">
+          <h2>Explore IS Career Paths</h2>
+          <p>Select a track to inspect day-to-day work, entry requirements, and verified compensation data.</p>
         </div>
 
-        <div class="career-card">
-          <h3>Business / Systems Analyst</h3>
-          <p>Connect business needs with technology solutions.</p>
-          <button onclick="showCareer('business')">Explore Career</button>
+        <div class="career-container">
+          <div class="career-card">
+            <div>
+              <h3>Software / Application Developer</h3>
+              <p>Engineer, debug, and scale enterprise applications and microservices.</p>
+            </div>
+            <button class="primary-btn" onclick="showCareer('software')">Explore Career</button>
+          </div>
+
+          <div class="career-card">
+            <div>
+              <h3>Business / Systems Analyst</h3>
+              <p>Translate ambiguous business requirements into robust technical specifications.</p>
+            </div>
+            <button class="primary-btn" onclick="showCareer('business')">Explore Career</button>
+          </div>
+
+          <div class="career-card">
+            <div>
+              <h3>Data Analyst / Data Scientist</h3>
+              <p>Model pipelines, build BI dashboards, and surface statistical business insights.</p>
+            </div>
+            <button class="primary-btn" onclick="showCareer('data')">Explore Career</button>
+          </div>
+
+          <div class="career-card">
+            <div>
+              <h3>Cybersecurity Analyst</h3>
+              <p>Defend enterprise assets, manage SIEM alerts, and engineer zero-trust architecture.</p>
+            </div>
+            <button class="primary-btn" onclick="showCareer('cyber')">Explore Career</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: CAREER MATCH QUIZ -->
+      <section id="quizSection" style="display: none;">
+        <div class="section-title">
+          <h2>IS Career Match Quiz</h2>
+          <p>Discover which Information Systems track best fits your problem-solving style.</p>
         </div>
 
-        <div class="career-card">
-          <h3>Data Analyst / Data Scientist</h3>
-          <p>Use data to discover insights and support decisions.</p>
-          <button onclick="showCareer('data')">Explore Career</button>
+        <div class="panel-card" style="max-width: 800px; margin: 0 auto;">
+          <div id="quizQuestionsContainer"></div>
+          <button class="primary-btn" onclick="submitQuiz()" style="margin-top: 15px;">Calculate My Fit</button>
+
+          <div id="quizResult" style="display: none; margin-top: 25px; padding: 20px; background: #eef4fa; border-left: 5px solid var(--byu-navy); border-radius: 6px;"></div>
+        </div>
+      </section>
+
+      <!-- TAB 3: INTERVIEW PREP -->
+      <section id="interviewSection" style="display: none;">
+        <div class="section-title">
+          <h2>Mock Interview Engine</h2>
+          <p>Practice realistic, entry-level interview scenarios with immediate rubric feedback.</p>
         </div>
 
-        <div class="career-card">
-          <h3>Cybersecurity Analyst</h3>
-          <p>Protect systems, networks, and data from security threats.</p>
-          <button onclick="showCareer('cyber')">Explore Career</button>
+        <div class="panel-card">
+          <div class="controls-grid">
+            <div>
+              <label for="prepRoleSelect">Target Career Path</label>
+              <select id="prepRoleSelect" onchange="loadInterviewQuestion()">
+                <option value="software">Software / Application Developer</option>
+                <option value="business">Business / Systems Analyst</option>
+                <option value="data">Data Analyst / Data Scientist</option>
+                <option value="cyber">Cybersecurity Analyst</option>
+              </select>
+            </div>
+            <div>
+              <label for="prepTypeSelect">Question Category</label>
+              <select id="prepTypeSelect" onchange="loadInterviewQuestion()">
+                <option value="behavioral">Behavioral (STAR Method)</option>
+                <option value="technical">Technical / Situational</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="question-box">
+            <h4 id="questionHeading">Prompt</h4>
+            <p id="questionText" style="margin: 0;"></p>
+          </div>
+
+          <label for="userResponse">Your Answer Attempt:</label>
+          <textarea id="userResponse" placeholder="Structure your response clearly. Be specific about tools, metrics, and processes..."></textarea>
+          
+          <button class="primary-btn" onclick="evaluateAnswer()">Submit & Reveal Strong Answer</button>
+
+          <div id="feedbackContainer" class="feedback-box">
+            <div class="strong-answer-card">
+              <h4>Suggested Strong Answer (Model Response)</h4>
+              <p id="modelAnswerText"></p>
+            </div>
+
+            <div class="rubric-checklist">
+              <h4>Self-Evaluation Checklist</h4>
+              <p style="font-size: 13px; color: #64748b; margin-top: -5px;">Compare your written attempt against these core evaluation criteria:</p>
+              <div id="checklistItems"></div>
+            </div>
+          </div>
         </div>
       </div>
       <section id="interview-section" style="margin-top: 60px">
@@ -227,13 +468,11 @@
       </section>
     </main>
 
-    <!-- Career Modal -->
+    <!-- Career Detail Modal -->
     <div id="careerModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeCareer()">&times;</span>
-
         <h2 id="detail-title"></h2>
-
         <div id="detail-content"></div>
       </div>
     </div>
@@ -243,224 +482,289 @@
         software: {
           title: "Software / Application Developer",
           content: `
-          <h3>What Does This Role Do?</h3>
-          <p>
-            Software developers design, build, test, and maintain software applications.
-            They turn user and business needs into working software.
-          </p>
+            <h3>What Does This Role Do?</h3>
+            <p>Software developers design, write, test, and deploy software applications. They translate functional requirements into scalable, reliable production code.</p>
 
-          <h3>Day-to-Day Responsibilities</h3>
-          <ul>
-            <li>Write and update code</li>
-            <li>Debug and fix software problems</li>
-            <li>Test applications</li>
-            <li>Review code</li>
-            <li>Collaborate with developers, analysts, and designers</li>
-          </ul>
+            <h3>Day-to-Day Responsibilities</h3>
+            <ul>
+              <li>Write clean, modular code across front-end and back-end stacks</li>
+              <li>Debug production incidents and write unit/integration tests</li>
+              <li>Participate in agile sprint ceremonies, standups, and pull request code reviews</li>
+              <li>Integrate third-party RESTful APIs and optimize relational database queries</li>
+            </ul>
 
-          <h3>Technical Skills & Tools</h3>
-          <ul>
-            <li>Python, Java, JavaScript, or C#</li>
-            <li>SQL and databases</li>
-            <li>Git and GitHub</li>
-            <li>APIs</li>
-            <li>HTML, CSS, and JavaScript</li>
-          </ul>
+            <h3>Technical Skills & Tools</h3>
+            <ul>
+              <li><strong>Languages:</strong> C#, Python, JavaScript/TypeScript, Java</li>
+              <li><strong>Frameworks:</strong> .NET Core, React, Node.js</li>
+              <li><strong>Tools & Infra:</strong> Git/GitHub, Docker, PostgreSQL/SQL Server, Azure/AWS</li>
+            </ul>
 
-          <h3>Entry-Level Expectations</h3>
-          <ul>
-            <li>Be comfortable with at least one programming language</li>
-            <li>Understand basic SQL</li>
-            <li>Be able to read and debug code</li>
-            <li>Understand version control</li>
-            <li>Have projects that demonstrate coding skills</li>
-          </ul>
+            <h3>Entry-Level Expectations</h3>
+            <ul>
+              <li>Fluency in at least one object-oriented language and foundational data structures</li>
+              <li>Comfort writing CRUD operations and basic relational SQL queries</li>
+              <li>Ability to read legacy codebases, debug with breakpoints, and explain technical trade-offs</li>
+            </ul>
 
-          <h3>Salary & Growth</h3>
-          <p>Verified salary and job growth data will be added from reliable sources.</p>
+            <h3>Salary & Growth Trajectory</h3>
+            <p><strong>Starting Salary Range:</strong> $78,000 – $96,000 base (Mid-Career: $125,000+)</p>
+            <p><strong>Projected Growth:</strong> 25% through 2032 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. Bureau of Labor Statistics (BLS)</span>
 
-          <h3>What Makes a Strong Candidate?</h3>
-          <ul>
-            <li>Strong problem-solving skills</li>
-            <li>Clear communication</li>
-            <li>Hands-on project experience</li>
-            <li>Ability to work with a team</li>
-            <li>Willingness to learn new technologies</li>
-          </ul>
-        `,
+            <h3>What Makes a Strong Candidate?</h3>
+            <ul>
+              <li>A verified GitHub portfolio with non-trivial full-stack applications</li>
+              <li>Clean system design thinking and proactive communication about technical blockers</li>
+            </ul>
+          `,
+          interview: {
+            behavioral: {
+              prompt: "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
+              model: "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing the HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a full regression suite before merging. We shipped on schedule with zero authentication incidents.",
+              criteria: [
+                "Clearly defined the specific bug and high-stakes context",
+                "Demonstrated a structured debugging methodology rather than trial-and-error",
+                "Quantified the outcome or confirmed regression testing was conducted"
+              ]
+            },
+            technical: {
+              prompt: "Explain the difference between synchronous and asynchronous operations. In what scenario would you use an async call in a web application?",
+              model: "Synchronous operations execute sequentially, blocking subsequent execution until the current task finishes. Asynchronous execution offloads the operation (such as an external API call or disk I/O) to the event loop or background worker thread, allowing the main thread to continue processing without freezing. You should use asynchronous calls for long-running I/O tasks—like querying a database or requesting data from a payment gateway—to keep the application UI responsive and maintain server throughput.",
+              criteria: [
+                "Accurately defined blocking vs. non-blocking execution",
+                "Cited concrete examples like database calls, file I/O, or third-party APIs",
+                "Mentioned UI responsiveness or thread optimization"
+              ]
+            }
+          }
         },
 
         business: {
           title: "Business / Systems Analyst",
           content: `
-          <h3>What Does This Role Do?</h3>
-          <p>
-            Business and systems analysts study business problems, gather requirements,
-            and help organizations improve processes through technology.
-          </p>
+            <h3>What Does This Role Do?</h3>
+            <p>Business & Systems Analysts act as the communication bridge between non-technical stakeholders and software engineers, discovering system requirements and optimizing enterprise business processes.</p>
 
-          <h3>Day-to-Day Responsibilities</h3>
-          <ul>
-            <li>Meet with stakeholders</li>
-            <li>Gather and document business requirements</li>
-            <li>Analyze current business processes</li>
-            <li>Recommend system improvements</li>
-            <li>Work with developers and technical teams</li>
-          </ul>
+            <h3>Day-to-Day Responsibilities</h3>
+            <ul>
+              <li>Facilitate discovery interviews with business stakeholders to extract functional requirements</li>
+              <li>Create process flowcharts, user stories, acceptance criteria, and system diagrams</li>
+              <li>Execute user acceptance testing (UAT) and validate software deliverables against business needs</li>
+              <li>Query relational databases to validate data integrity and track business metrics</li>
+            </ul>
 
-          <h3>Technical Skills & Tools</h3>
-          <ul>
-            <li>SQL</li>
-            <li>Excel</li>
-            <li>Process modeling</li>
-            <li>Requirements documentation</li>
-            <li>Basic understanding of databases and systems</li>
-          </ul>
+            <h3>Technical Skills & Tools</h3>
+            <ul>
+              <li><strong>Methodologies:</strong> Agile/Scrum, SDLC, BPMN Process Mapping</li>
+              <li><strong>Documentation & Management:</strong> Jira, Confluence, Lucidchart, Figma</li>
+              <li><strong>Data:</strong> SQL queries, Advanced Excel (Pivot Tables, XLOOKUP), Power BI</li>
+            </ul>
 
-          <h3>Entry-Level Expectations</h3>
-          <ul>
-            <li>Understand how business processes work</li>
-            <li>Be able to gather and explain requirements</li>
-            <li>Have strong communication skills</li>
-            <li>Know basic SQL and data analysis</li>
-            <li>Work with technical and non-technical people</li>
-          </ul>
+            <h3>Entry-Level Expectations</h3>
+            <ul>
+              <li>Ability to decompose ambiguous business problems into structured functional user stories</li>
+              <li>Solid SQL proficiency for extracting and reconciling data sets</li>
+              <li>Strong written and spoken stakeholder presentation skills</li>
+            </ul>
 
-          <h3>Salary & Growth</h3>
-          <p>Verified salary and job growth data will be added from reliable sources.</p>
+            <h3>Salary & Growth Trajectory</h3>
+            <p><strong>Starting Salary Range:</strong> $72,000 – $88,000 base (Mid-Career: $110,000+)</p>
+            <p><strong>Projected Growth:</strong> 11% through 2032 (Faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Computer Systems Analysts)</span>
 
-          <h3>What Makes a Strong Candidate?</h3>
-          <ul>
-            <li>Strong communication skills</li>
-            <li>Business understanding</li>
-            <li>Analytical thinking</li>
-            <li>Ability to translate business needs into technical requirements</li>
-            <li>Strong teamwork skills</li>
-          </ul>
-        `,
+            <h3>What Makes a Strong Candidate?</h3>
+            <ul>
+              <li>Exceptional active listening and ability to frame technical constraints in business ROI terms</li>
+              <li>Rigorous attention to detail when writing edge-case acceptance criteria</li>
+            </ul>
+          `,
+          interview: {
+            behavioral: {
+              prompt: "Describe a situation where a stakeholder requested a critical feature that was impossible to build within the sprint deadline. How did you handle it?",
+              model: "While working on a client management tool, a stakeholder requested full Salesforce integration four days before sprint close. Rather than flatly saying no, I scheduled a 15-minute alignment call to understand the underlying business driver: they needed client contact details synchronized for an upcoming campaign. I explained the technical scope and proposed an MVP compromise: we implemented a lightweight manual CSV import for the campaign that week, then scheduled the full bi-directional API sync for the subsequent sprint. The stakeholder met their deadline, and engineering protected system stability.",
+              criteria: [
+                "Addressed stakeholder conflict with empathy and professionalism",
+                "Offered a functional trade-off or MVP rather than an outright refusal",
+                "Maintained sprint velocity and engineering team integrity"
+              ]
+            },
+            technical: {
+              prompt: "How do you distinguish between a functional requirement and a non-functional requirement? Give an example of each for an e-commerce platform.",
+              model: "Functional requirements describe what the system must explicitly do—the specific behaviors, user actions, and business logic. For an e-commerce site, a functional requirement is: 'A user must receive an email confirmation with an order receipt within 60 seconds of checkout.' Non-functional requirements specify how the system performs—covering system quality attributes like performance, scalability, security, and availability. For the same site, a non-functional requirement is: 'The checkout endpoint must support 5,000 concurrent transactions with latency under 200 milliseconds.'",
+              criteria: [
+                "Clearly articulated the distinction between behavior ('what') and performance/constraints ('how')",
+                "Provided realistic, distinct e-commerce examples for both",
+                "Used industry-standard terminology (latency, throughput, availability, etc.)"
+              ]
+            }
+          }
         },
 
         data: {
           title: "Data Analyst / Data Scientist",
           content: `
-          <h3>What Does This Role Do?</h3>
-          <p>
-            Data professionals collect, clean, analyze, and interpret data to help
-            organizations make better decisions.
-          </p>
+            <h3>What Does This Role Do?</h3>
+            <p>Data professionals extract, clean, transform, and analyze datasets to uncover patterns, forecast outcomes, and empower executive decision-making.</p>
 
-          <h3>Day-to-Day Responsibilities</h3>
-          <ul>
-            <li>Clean and prepare data</li>
-            <li>Write SQL queries</li>
-            <li>Create reports and dashboards</li>
-            <li>Analyze trends and patterns</li>
-            <li>Present insights to stakeholders</li>
-          </ul>
+            <h3>Day-to-Day Responsibilities</h3>
+            <ul>
+              <li>Write performant SQL queries to extract data across dimensional data warehouses</li>
+              <li>Clean, normalize, and reconcile disparate data streams using Python or R</li>
+              <li>Design automated, interactive executive dashboards in Tableau or Power BI</li>
+              <li>Run statistical significance tests and communicate actionable conclusions to business leads</li>
+            </ul>
 
-          <h3>Technical Skills & Tools</h3>
-          <ul>
-            <li>SQL</li>
-            <li>Excel</li>
-            <li>Python or R</li>
-            <li>Tableau or Power BI</li>
-            <li>Statistics</li>
-          </ul>
+            <h3>Technical Skills & Tools</h3>
+            <ul>
+              <li><strong>Querying & Warehousing:</strong> Advanced SQL, Snowflake, BigQuery</li>
+              <li><strong>Programming:</strong> Python (pandas, numpy, scikit-learn), R</li>
+              <li><strong>Visualization:</strong> Power BI, Tableau, DAX</li>
+            </ul>
 
-          <h3>Entry-Level Expectations</h3>
-          <ul>
-            <li>Be comfortable with SQL</li>
-            <li>Understand basic statistics</li>
-            <li>Know how to clean and analyze data</li>
-            <li>Create clear visualizations</li>
-            <li>Explain insights in business terms</li>
-          </ul>
+            <h3>Entry-Level Expectations</h3>
+            <ul>
+              <li>Mastery of complex SQL joins, aggregations, window functions, and CTEs</li>
+              <li>Demonstrated ability to clean missing or malformed real-world data</li>
+              <li>Ability to produce coherent charts that emphasize signal over visual noise</li>
+            </ul>
 
-          <h3>Salary & Growth</h3>
-          <p>Verified salary and job growth data will be added from reliable sources.</p>
+            <h3>Salary & Growth Trajectory</h3>
+            <p><strong>Starting Salary Range:</strong> $74,000 – $92,000 base (Mid-Career: $120,000+)</p>
+            <p><strong>Projected Growth:</strong> 35% through 2032 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Data Scientists)</span>
 
-          <h3>What Makes a Strong Candidate?</h3>
-          <ul>
-            <li>Strong analytical skills</li>
-            <li>Attention to detail</li>
-            <li>Ability to communicate insights clearly</li>
-            <li>Strong SQL and data visualization skills</li>
-            <li>Curiosity and problem-solving ability</li>
-          </ul>
-        `,
+            <h3>What Makes a Strong Candidate?</h3>
+            <ul>
+              <li>Curiosity to explore data anomalies and tie findings to revenue or operational savings</li>
+              <li>Demonstrated projects handling untidy, real-world data instead of pre-cleaned tutorial sets</li>
+            </ul>
+          `,
+          interview: {
+            behavioral: {
+              prompt: "Have you ever presented data that contradicted a leader's intuition or hypothesis? How did you communicate the findings?",
+              model: "During an analytics internship, our marketing director assumed a specific email campaign was driving our sales bump. When I analyzed the multi-touch attribution data in SQL, I discovered that 85% of purchasers had already initiated a trial via organic search before the email was sent; the email had a negligible incremental conversion lift. In my presentation, I validated the campaign's strong engagement rates first, then walked through the attribution model step-by-step using clear cohort charts. By focusing entirely on methodology and proposing a re-allocation of ad spend toward top-of-funnel search, leadership trusted the data and reallocated $15,000 to higher-converting channels.",
+              criteria: [
+                "Framed the contradiction objectively with data rather than personal opinion",
+                "Maintained constructive rapport with leadership without being defensive",
+                "Connected the analysis directly to business impact and cost efficiency"
+              ]
+            },
+            technical: {
+              prompt: "What is the difference between WHERE and HAVING in SQL? In what order are they executed in a query?",
+              model: "The WHERE clause filters individual rows before any aggregations or groupings take place. In contrast, the HAVING clause filters grouped records after an aggregate function (such as COUNT, SUM, or AVG) has been computed via a GROUP BY clause. In SQL logical query processing, FROM and WHERE execute first to narrow down the dataset, followed by GROUP BY, then HAVING evaluates the aggregated groups, and finally SELECT and ORDER BY execute.",
+              criteria: [
+                "Identified row-level filtering (WHERE) vs. aggregated group filtering (HAVING)",
+                "Specified that HAVING requires or follows GROUP BY",
+                "Accurately mapped the logical query execution order"
+              ]
+            }
+          }
         },
 
         cyber: {
           title: "Cybersecurity Analyst",
           content: `
-          <h3>What Does This Role Do?</h3>
-          <p>
-            Cybersecurity analysts protect systems, networks, and data from threats
-            by monitoring security activity and responding to incidents.
-          </p>
+            <h3>What Does This Role Do?</h3>
+            <p>Cybersecurity Analysts safeguard an organization's network, cloud perimeter, and endpoints by monitoring telemetry, triaging vulnerabilities, and defending against cyber threats.</p>
 
-          <h3>Day-to-Day Responsibilities</h3>
-          <ul>
-            <li>Monitor security alerts</li>
-            <li>Investigate suspicious activity</li>
-            <li>Review system vulnerabilities</li>
-            <li>Respond to security incidents</li>
-            <li>Document security findings</li>
-          </ul>
+            <h3>Day-to-Day Responsibilities</h3>
+            <ul>
+              <li>Monitor Security Information and Event Management (SIEM) consoles for anomalous traffic</li>
+              <li>Triage phishing, credential stuffing, and unauthorized access alerts</li>
+              <li>Execute vulnerability scans and assist infrastructure teams with critical patch management</li>
+              <li>Maintain incident response playbooks and assist in root-cause post-mortem analyses</li>
+            </ul>
 
-          <h3>Technical Skills & Tools</h3>
-          <ul>
-            <li>Networking fundamentals</li>
-            <li>Linux and Windows basics</li>
-            <li>Security monitoring tools</li>
-            <li>SIEM platforms</li>
-            <li>Basic scripting</li>
-          </ul>
+            <h3>Technical Skills & Tools</h3>
+            <ul>
+              <li><strong>SIEM & Telemetry:</strong> Splunk, Microsoft Sentinel, Wireshark</li>
+              <li><strong>Security Concepts:</strong> TCP/IP networking, Firewalls, Zero Trust, MITRE ATT&CK</li>
+              <li><strong>Scripting:</strong> Bash, PowerShell, Python for alert automation</li>
+            </ul>
 
-          <h3>Entry-Level Expectations</h3>
-          <ul>
-            <li>Understand networking basics</li>
-            <li>Know common cybersecurity threats</li>
-            <li>Understand authentication and access control</li>
-            <li>Know basic security monitoring concepts</li>
-            <li>Explain how you would investigate an incident</li>
-          </ul>
+            <h3>Entry-Level Expectations</h3>
+            <ul>
+              <li>Strong foundation in network protocols (DNS, DHCP, TLS, subnetting)</li>
+              <li>Familiarity with common attack vectors (OWASP Top 10, ransomware, social engineering)</li>
+              <li>Security+ or hands-on homelab experience analyzing packet captures</li>
+            </ul>
 
-          <h3>Salary & Growth</h3>
-          <p>Verified salary and job growth data will be added from reliable sources.</p>
+            <h3>Salary & Growth Trajectory</h3>
+            <p><strong>Starting Salary Range:</strong> $76,000 – $94,000 base (Mid-Career: $125,000+)</p>
+            <p><strong>Projected Growth:</strong> 32% through 2032 (Much faster than average)</p>
+            <span class="data-badge">Sources: BYU Marriott IS Placement Data & U.S. BLS (Information Security Analysts)</span>
 
-          <h3>What Makes a Strong Candidate?</h3>
-          <ul>
-            <li>Strong attention to detail</li>
-            <li>Analytical thinking</li>
-            <li>Curiosity about how systems work</li>
-            <li>Ability to stay calm during incidents</li>
-            <li>Strong communication and documentation skills</li>
-          </ul>
-        `,
-        },
+            <h3>What Makes a Strong Candidate?</h3>
+            <ul>
+              <li>Homelab experience (e.g., configuring pfSense, running Kali Linux, or analyzing PCAPs)</li>
+              <li>Disciplined documentation habits and calm triage during simulated high-pressure incidents</li>
+            </ul>
+          `,
+          interview: {
+            behavioral: {
+              prompt: "Describe how you prioritize multiple high-severity security alerts that trigger simultaneously across different departments.",
+              model: "When alerts trigger concurrently, I triage based on data sensitivity and threat containment potential. First, I identify the asset tier: an alert involving our production database or domain controller immediately supersedes a standard workstation alert. Second, I look for indicators of active lateral movement or data exfiltration. If a workstation shows command-and-control beaconing, I isolate that host from the network immediately via our EDR console to stop propagation, before pivoting my full attention to deeper packet analysis on the domain controller.",
+              criteria: [
+                "Established a clear triage framework based on asset criticality",
+                "Took immediate containment action (e.g., host isolation) to stop lateral movement",
+                "Demonstrated composure and structured threat escalation"
+              ]
+            },
+            technical: {
+              prompt: "What is the difference between symmetric and asymmetric encryption? Where is each typically applied during an HTTPS handshake?",
+              model: "Symmetric encryption uses a single shared secret key to both encrypt and decrypt data. It is computationally very fast, making it ideal for bulk data transfer. Asymmetric encryption uses a mathematically linked public-private key pair: data encrypted with the public key can only be decrypted by the private key. It is slower and computationally expensive. During an HTTPS/TLS handshake, asymmetric encryption is used first to authenticate the server's identity via its certificate and securely exchange a session key. Once agreed upon, both client and server switch to symmetric encryption using that session key for the actual payload data.",
+              criteria: [
+                "Differentiated single shared key vs. public/private key pair",
+                "Explained the speed/computational efficiency trade-off",
+                "Accurately explained their role in TLS/HTTPS handshakes"
+              ]
+            }
+          }
+        }
       };
 
+      // Tab Switching Logic
+      function switchTab(tab) {
+        const discSec = document.getElementById("discoverySection");
+        const quizSec = document.getElementById("quizSection");
+        const prepSec = document.getElementById("interviewSection");
+        const tabs = document.querySelectorAll(".tab-btn");
+
+        discSec.style.display = "none";
+        quizSec.style.display = "none";
+        prepSec.style.display = "none";
+        tabs.forEach(t => t.classList.remove("active"));
+
+        if (tab === "discovery") {
+          discSec.style.display = "block";
+          tabs[0].classList.add("active");
+        } else if (tab === "quiz") {
+          quizSec.style.display = "block";
+          tabs[1].classList.add("active");
+        } else if (tab === "interview") {
+          prepSec.style.display = "block";
+          tabs[2].classList.add("active");
+          loadInterviewQuestion();
+        }
+      }
+
+      // Modal Logic
       function showCareer(career) {
         const details = careerData[career];
-
         document.getElementById("detail-title").textContent = details.title;
         document.getElementById("detail-content").innerHTML = details.content;
-
         document.getElementById("careerModal").style.display = "block";
-
         document.body.style.overflow = "hidden";
       }
 
       function closeCareer() {
         document.getElementById("careerModal").style.display = "none";
-
         document.body.style.overflow = "auto";
       }
 
       window.onclick = function (event) {
         const modal = document.getElementById("careerModal");
-
         if (event.target === modal) {
           closeCareer();
         }
