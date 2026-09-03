@@ -332,7 +332,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
       }
 
       .career-card:hover {
@@ -654,14 +656,62 @@
           </div>
 
           <div class="career-selector" id="careerSelector">
-            <button class="career-pill active" data-career="software" onclick="selectDashboardCareer('software')">Software Developer</button>
-            <button class="career-pill" data-career="business" onclick="selectDashboardCareer('business')">Business Analyst</button>
-            <button class="career-pill" data-career="data" onclick="selectDashboardCareer('data')">Data Analyst/Scientist</button>
-            <button class="career-pill" data-career="cyber" onclick="selectDashboardCareer('cyber')">Cybersecurity Analyst</button>
-            <button class="career-pill" data-career="project" onclick="selectDashboardCareer('project')">IT Project Manager</button>
-            <button class="career-pill" data-career="product" onclick="selectDashboardCareer('product')">UX / Product Manager</button>
-            <button class="career-pill" data-career="erp" onclick="selectDashboardCareer('erp')">ERP Consultant</button>
-            <button class="career-pill" data-career="cloud" onclick="selectDashboardCareer('cloud')">Cloud / Infra Engineer</button>
+            <button
+              class="career-pill active"
+              data-career="software"
+              onclick="selectDashboardCareer('software')"
+            >
+              Software Developer
+            </button>
+            <button
+              class="career-pill"
+              data-career="business"
+              onclick="selectDashboardCareer('business')"
+            >
+              Business Analyst
+            </button>
+            <button
+              class="career-pill"
+              data-career="data"
+              onclick="selectDashboardCareer('data')"
+            >
+              Data Analyst/Scientist
+            </button>
+            <button
+              class="career-pill"
+              data-career="cyber"
+              onclick="selectDashboardCareer('cyber')"
+            >
+              Cybersecurity Analyst
+            </button>
+            <button
+              class="career-pill"
+              data-career="project"
+              onclick="selectDashboardCareer('project')"
+            >
+              IT Project Manager
+            </button>
+            <button
+              class="career-pill"
+              data-career="product"
+              onclick="selectDashboardCareer('product')"
+            >
+              UX / Product Manager
+            </button>
+            <button
+              class="career-pill"
+              data-career="erp"
+              onclick="selectDashboardCareer('erp')"
+            >
+              ERP Consultant
+            </button>
+            <button
+              class="career-pill"
+              data-career="cloud"
+              onclick="selectDashboardCareer('cloud')"
+            >
+              Cloud / Infra Engineer
+            </button>
           </div>
         </section>
 
@@ -670,73 +720,129 @@
           <div class="career-card">
             <div>
               <h3>Software / Application Developer</h3>
-              <p>Engineer, debug, and scale enterprise applications and microservices.</p>
-              <div class="quick-stats"><span>Entry: $65K–$90K</span><span>Growth: +17%</span></div>
+              <p>
+                Engineer, debug, and scale enterprise applications and
+                microservices.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $65K–$90K</span><span>Growth: +17%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('software')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('software')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Business / Systems Analyst</h3>
-              <p>Translate ambiguous business needs into robust technical user specifications.</p>
-              <div class="quick-stats"><span>Entry: $55K–$80K</span><span>Growth: +9%</span></div>
+              <p>
+                Translate ambiguous business needs into robust technical user
+                specifications.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $55K–$80K</span><span>Growth: +9%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('business')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('business')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Data Analyst / Data Scientist</h3>
-              <p>Model pipelines, build BI dashboards, and surface predictive business insights.</p>
-              <div class="quick-stats"><span>Entry: $55K–$85K</span><span>Growth: +36%</span></div>
+              <p>
+                Model pipelines, build BI dashboards, and surface predictive
+                business insights.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $55K–$85K</span><span>Growth: +36%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('data')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('data')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Cybersecurity Analyst</h3>
-              <p>Defend enterprise networks, investigate SIEM telemetry, and ensure zero-trust security.</p>
-              <div class="quick-stats"><span>Entry: $60K–$90K</span><span>Growth: +33%</span></div>
+              <p>
+                Defend enterprise networks, investigate SIEM telemetry, and
+                ensure zero-trust security.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $60K–$90K</span><span>Growth: +33%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('cyber')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('cyber')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>IT Project Manager</h3>
-              <p>Direct technology initiatives, remove engineering blockers, and manage budgets and schedules.</p>
-              <div class="quick-stats"><span>Entry: $60K–$85K</span><span>Growth: +15%</span></div>
+              <p>
+                Direct technology initiatives, remove engineering blockers, and
+                manage budgets and schedules.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $60K–$85K</span><span>Growth: +15%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('project')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('project')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>UX Designer / Product Manager</h3>
-              <p>Define feature roadmaps, conduct user discovery, and align engineering with user empathy.</p>
-              <div class="quick-stats"><span>Entry: $65K–$92K</span><span>Growth: +16%</span></div>
+              <p>
+                Define feature roadmaps, conduct user discovery, and align
+                engineering with user empathy.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $65K–$92K</span><span>Growth: +16%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('product')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('product')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>ERP / Systems Consultant</h3>
-              <p>Implement and configure large-scale enterprise suites like SAP, Salesforce, and Workday.</p>
-              <div class="quick-stats"><span>Entry: $70K–$95K</span><span>Growth: +11%</span></div>
+              <p>
+                Implement and configure large-scale enterprise suites like SAP,
+                Salesforce, and Workday.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $70K–$95K</span><span>Growth: +11%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('erp')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('erp')">
+              Explore Career
+            </button>
           </div>
 
           <div class="career-card">
             <div>
               <h3>Cloud / Infrastructure Engineer</h3>
-              <p>Architect resilient multi-region cloud infrastructures, CI/CD automation, and DevOps pipelines.</p>
-              <div class="quick-stats"><span>Entry: $68K–$95K</span><span>Growth: +22%</span></div>
+              <p>
+                Architect resilient multi-region cloud infrastructures, CI/CD
+                automation, and DevOps pipelines.
+              </p>
+              <div class="quick-stats">
+                <span>Entry: $68K–$95K</span><span>Growth: +22%</span>
+              </div>
             </div>
-            <button class="primary-btn" onclick="showCareer('cloud')">Explore Career</button>
+            <button class="primary-btn" onclick="showCareer('cloud')">
+              Explore Career
+            </button>
           </div>
         </div>
 
@@ -752,17 +858,33 @@
         <div class="section-title">
           <h2>IS Career Match Quiz</h2>
           <p>
-            Answer 6 diagnostic scenarios to determine which of the 8 Information Systems tracks aligns best with your personality and technical interests.
+            Answer 6 diagnostic scenarios to determine which of the 8
+            Information Systems tracks aligns best with your personality and
+            technical interests.
           </p>
         </div>
 
         <div class="panel-card" style="max-width: 850px; margin: 0 auto">
           <div id="quizQuestionsContainer"></div>
-          <button class="primary-btn" onclick="submitQuiz()" style="margin-top: 15px">
+          <button
+            class="primary-btn"
+            onclick="submitQuiz()"
+            style="margin-top: 15px"
+          >
             Calculate My Fit
           </button>
 
-          <div id="quizResult" style="display: none; margin-top: 25px; padding: 20px; background: #eef4fa; border-left: 5px solid var(--byu-navy); border-radius: 6px;"></div>
+          <div
+            id="quizResult"
+            style="
+              display: none;
+              margin-top: 25px;
+              padding: 20px;
+              background: #eef4fa;
+              border-left: 5px solid var(--byu-navy);
+              border-radius: 6px;
+            "
+          ></div>
         </div>
       </section>
 
@@ -771,14 +893,15 @@
         <div class="section-title">
           <h2>Mock Interview Engine</h2>
           <p>
-            Practice realistic, entry-level interview scenarios across all 8 IS career tracks with immediate rubric feedback.
+            Practice realistic, entry-level interview scenarios across all 8 IS
+            career tracks with immediate rubric feedback.
           </p>
         </div>
 
         <div class="panel-card">
-          <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" 
-            alt="Mock Interview Session" 
+          <img
+            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80"
+            alt="Mock Interview Session"
             class="interview-banner"
           />
 
@@ -786,7 +909,9 @@
             <div>
               <label for="prepRoleSelect">Target Career Path</label>
               <select id="prepRoleSelect" onchange="loadInterviewQuestion()">
-                <option value="software">Software / Application Developer</option>
+                <option value="software">
+                  Software / Application Developer
+                </option>
                 <option value="business">Business / Systems Analyst</option>
                 <option value="data">Data Analyst / Data Scientist</option>
                 <option value="cyber">Cybersecurity Analyst</option>
@@ -828,28 +953,50 @@
             id="userResponse"
             placeholder="Structure your response clearly. Be specific about tools, metrics, and processes..."
           ></textarea>
-          
+
           <div id="voicePractice" style="margin-bottom: 20px">
-            <p style="font-weight: 600; color: var(--byu-navy); margin-bottom: 8px;">
+            <p
+              style="
+                font-weight: 600;
+                color: var(--byu-navy);
+                margin-bottom: 8px;
+              "
+            >
               🎙️ Or Practice Your Answer Out Loud
             </p>
 
-            <button type="button" class="primary-btn" id="recordBtn" onclick="startRecording()">
+            <button
+              type="button"
+              class="primary-btn"
+              id="recordBtn"
+              onclick="startRecording()"
+            >
               🎙️ Record Answer
             </button>
 
-            <button type="button" class="primary-btn" id="stopBtn" onclick="stopRecording()" disabled>
+            <button
+              type="button"
+              class="primary-btn"
+              id="stopBtn"
+              onclick="stopRecording()"
+              disabled
+            >
               ⏹ Stop Recording
             </button>
 
-            <span id="recordingStatus" style="margin-left: 12px; font-weight: 600"></span>
+            <span
+              id="recordingStatus"
+              style="margin-left: 12px; font-weight: 600"
+            ></span>
 
             <div id="audioPlayback" style="display: none; margin-top: 15px">
-              <p style="margin-bottom: 6px"><strong>Listen to your answer:</strong></p>
+              <p style="margin-bottom: 6px">
+                <strong>Listen to your answer:</strong>
+              </p>
               <audio id="recordedAudio" controls></audio>
             </div>
           </div>
-          
+
           <button class="primary-btn" onclick="evaluateAnswer()">
             Submit & Reveal Strong Answer
           </button>
@@ -863,7 +1010,8 @@
             <div class="rubric-checklist">
               <h4>Self-Evaluation Checklist</h4>
               <p style="font-size: 13px; color: #64748b; margin-top: -5px">
-                Compare your written attempt against these core evaluation criteria:
+                Compare your written attempt against these core evaluation
+                criteria:
               </p>
               <div id="checklistItems"></div>
             </div>
@@ -876,31 +1024,117 @@
         <div class="section-title">
           <h2>Helpful Resources</h2>
           <p>
-            Access official BYU career pages, placement statistics, and AI interview preparation tools.
+            Access official BYU career pages, placement statistics, and AI
+            interview preparation tools.
           </p>
         </div>
 
-        <div class="panel-card" style="max-width: 800px; margin: 0 auto;">
-          <ul style="list-style-type: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
-            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
-              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">IS Career Page</h3>
-              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Explore official information systems career resources and opportunities.</p>
-              <a href="https://iscareers.byu.edu/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Visit IS Career Page &rarr;</a>
+        <div class="panel-card" style="max-width: 800px; margin: 0 auto">
+          <ul
+            style="
+              list-style-type: none;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            "
+          >
+            <li
+              style="
+                background: #fafbfc;
+                border: 1px solid var(--border-color);
+                padding: 18px 20px;
+                border-radius: 8px;
+              "
+            >
+              <h3
+                style="
+                  margin: 0 0 6px 0;
+                  color: var(--byu-navy);
+                  font-size: 18px;
+                "
+              >
+                IS Career Page
+              </h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px">
+                Explore official information systems career resources and
+                opportunities.
+              </p>
+              <a
+                href="https://iscareers.byu.edu/"
+                target="_blank"
+                style="
+                  color: var(--byu-royal);
+                  font-weight: 600;
+                  text-decoration: none;
+                "
+                >Visit IS Career Page &rarr;</a
+              >
             </li>
-            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
-              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">BYU Business Career Center</h3>
-              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Connect with career coaching, resume reviews, and recruiting events through CareerLaunch.</p>
-              <a href="https://careerlaunch.byu.edu/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Visit BYU Business Career Center &rarr;</a>
+            <li
+              style="
+                background: #fafbfc;
+                border: 1px solid var(--border-color);
+                padding: 18px 20px;
+                border-radius: 8px;
+              "
+            >
+              <h3
+                style="
+                  margin: 0 0 6px 0;
+                  color: var(--byu-navy);
+                  font-size: 18px;
+                "
+              >
+                BYU Business Career Center
+              </h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px">
+                Connect with career coaching, resume reviews, and recruiting
+                events through CareerLaunch.
+              </p>
+              <a
+                href="https://careerlaunch.byu.edu/"
+                target="_blank"
+                style="
+                  color: var(--byu-royal);
+                  font-weight: 600;
+                  text-decoration: none;
+                "
+                >Visit BYU Business Career Center &rarr;</a
+              >
             </li>
-            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
-              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">Rosie Chatbot</h3>
-              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Chat with Rosie, your specialized AI assistant to get feedback on your resume.</p>
-              <a href="https://chatgpt.com/g/g-676e232878688191a4aab320acb45542-rosie-the-resume-right-er" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">Open Rosie Chatbot &rarr;</a>
-            </li>
-            <li style="background: #fafbfc; border: 1px solid var(--border-color); padding: 18px 20px; border-radius: 8px;">
-              <h3 style="margin: 0 0 6px 0; color: var(--byu-navy); font-size: 18px;">BYU BSIS Career Placement Statistics</h3>
-              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px;">Review official post-graduation placement profiles and salary data for BYU Information Systems graduates.</p>
-              <a href="https://marriott.byu.edu/infosys/careers/placement-profile/bsis/" target="_blank" style="color: var(--byu-royal); font-weight: 600; text-decoration: none;">View Placement Statistics &rarr;</a>
+
+            <li
+              style="
+                background: #fafbfc;
+                border: 1px solid var(--border-color);
+                padding: 18px 20px;
+                border-radius: 8px;
+              "
+            >
+              <h3
+                style="
+                  margin: 0 0 6px 0;
+                  color: var(--byu-navy);
+                  font-size: 18px;
+                "
+              >
+                BYU BSIS Career Placement Statistics
+              </h3>
+              <p style="margin: 0 0 10px 0; color: #334155; font-size: 14px">
+                Review official post-graduation placement profiles and salary
+                data for BYU Information Systems graduates.
+              </p>
+              <a
+                href="https://marriott.byu.edu/infosys/careers/placement-profile/bsis/"
+                target="_blank"
+                style="
+                  color: var(--byu-royal);
+                  font-weight: 600;
+                  text-decoration: none;
+                "
+                >View Placement Statistics &rarr;</a
+              >
             </li>
           </ul>
         </div>
@@ -921,7 +1155,8 @@
       const careerData = {
         software: {
           title: "Software / Application Developer",
-          image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Software developers design, write, test, and deploy software applications. They translate functional requirements into scalable, reliable production code.</p>
@@ -956,22 +1191,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
+              prompt:
+                "Tell me about a time you encountered a stubborn bug in a project right before a deadline. How did you diagnose and resolve it?",
               tip: "Use the STAR Method: Situation → Task → Action → Result. Focus on the analytical steps you took rather than guessing.",
-              model: "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a regression suite before merging. We shipped on schedule with zero authentication incidents.",
-              criteria: ["Clearly defined the specific bug and high-stakes context", "Demonstrated a structured debugging methodology rather than trial-and-error", "Quantified the outcome or confirmed regression testing was conducted"]
+              model:
+                "In my junior core web project, our team hit an intermittent 500 error during authentication testing 48 hours before launch. Instead of guessing, I isolated the issue by reproducing the error in our staging logs and tracing HTTP headers. I discovered our JWT expiration logic failed when users crossed time zones. I wrote an automated unit test to reliably reproduce the failure, patched the token validation logic in our back-end middleware, and ran a regression suite before merging. We shipped on schedule with zero authentication incidents.",
+              criteria: [
+                "Clearly defined the specific bug and high-stakes context",
+                "Demonstrated a structured debugging methodology rather than trial-and-error",
+                "Quantified the outcome or confirmed regression testing was conducted",
+              ],
             },
             technical: {
-              prompt: "Explain the difference between synchronous and asynchronous operations. In what scenario would you use an async call in a web application?",
-              model: "Synchronous operations execute sequentially, blocking subsequent execution until the current task finishes. Asynchronous execution offloads the operation (such as an external API call or disk I/O) to the event loop or background worker thread, allowing the main thread to continue processing without freezing. You should use asynchronous calls for long-running I/O tasks—like querying a database or requesting data from a payment gateway—to keep the application UI responsive.",
-              criteria: ["Accurately defined blocking vs. non-blocking execution", "Cited concrete examples like database calls or third-party APIs", "Mentioned UI responsiveness or thread optimization"]
-            }
-          }
+              prompt:
+                "Explain the difference between synchronous and asynchronous operations. In what scenario would you use an async call in a web application?",
+              model:
+                "Synchronous operations execute sequentially, blocking subsequent execution until the current task finishes. Asynchronous execution offloads the operation (such as an external API call or disk I/O) to the event loop or background worker thread, allowing the main thread to continue processing without freezing. You should use asynchronous calls for long-running I/O tasks—like querying a database or requesting data from a payment gateway—to keep the application UI responsive.",
+              criteria: [
+                "Accurately defined blocking vs. non-blocking execution",
+                "Cited concrete examples like database calls or third-party APIs",
+                "Mentioned UI responsiveness or thread optimization",
+              ],
+            },
+          },
         },
 
         business: {
           title: "Business / Systems Analyst",
-          image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Business & Systems Analysts act as the communication bridge between non-technical stakeholders and software engineers, discovering system requirements and optimizing enterprise business processes.</p>
@@ -1006,22 +1254,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Describe a situation where a stakeholder requested a critical feature that was impossible to build within the sprint deadline. How did you handle it?",
+              prompt:
+                "Describe a situation where a stakeholder requested a critical feature that was impossible to build within the sprint deadline. How did you handle it?",
               tip: "Focus on stakeholder empathy, negotiation, and proposing practical compromise solutions.",
-              model: "While working on a client management tool, a stakeholder requested full Salesforce integration four days before sprint close. Rather than flatly saying no, I scheduled a 15-minute alignment call to understand the underlying business driver: they needed client contact details synchronized for an upcoming campaign. I explained the technical scope and proposed an MVP compromise: we implemented a lightweight manual CSV import for the campaign that week, then scheduled the full bi-directional API sync for the subsequent sprint.",
-              criteria: ["Addressed stakeholder conflict with empathy and professionalism", "Offered a functional trade-off or MVP rather than an outright refusal", "Maintained sprint velocity and engineering team integrity"]
+              model:
+                "While working on a client management tool, a stakeholder requested full Salesforce integration four days before sprint close. Rather than flatly saying no, I scheduled a 15-minute alignment call to understand the underlying business driver: they needed client contact details synchronized for an upcoming campaign. I explained the technical scope and proposed an MVP compromise: we implemented a lightweight manual CSV import for the campaign that week, then scheduled the full bi-directional API sync for the subsequent sprint.",
+              criteria: [
+                "Addressed stakeholder conflict with empathy and professionalism",
+                "Offered a functional trade-off or MVP rather than an outright refusal",
+                "Maintained sprint velocity and engineering team integrity",
+              ],
             },
             technical: {
-              prompt: "How do you distinguish between a functional requirement and a non-functional requirement? Give an example of each for an e-commerce platform.",
-              model: "Functional requirements describe what the system must explicitly do—the specific behaviors and user actions. For an e-commerce site, a functional requirement is: 'A user must receive an email confirmation with an order receipt within 60 seconds of checkout.' Non-functional requirements specify how the system performs—covering performance, scalability, and security. An example is: 'The checkout endpoint must support 5,000 concurrent transactions with latency under 200 milliseconds.'",
-              criteria: ["Clearly articulated the distinction between behavior ('what') and performance/constraints ('how')", "Provided realistic, distinct e-commerce examples for both", "Used industry-standard terminology (latency, throughput, availability)"]
-            }
-          }
+              prompt:
+                "How do you distinguish between a functional requirement and a non-functional requirement? Give an example of each for an e-commerce platform.",
+              model:
+                "Functional requirements describe what the system must explicitly do—the specific behaviors and user actions. For an e-commerce site, a functional requirement is: 'A user must receive an email confirmation with an order receipt within 60 seconds of checkout.' Non-functional requirements specify how the system performs—covering performance, scalability, and security. An example is: 'The checkout endpoint must support 5,000 concurrent transactions with latency under 200 milliseconds.'",
+              criteria: [
+                "Clearly articulated the distinction between behavior ('what') and performance/constraints ('how')",
+                "Provided realistic, distinct e-commerce examples for both",
+                "Used industry-standard terminology (latency, throughput, availability)",
+              ],
+            },
+          },
         },
 
         data: {
           title: "Data Analyst / Data Scientist",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Data professionals extract, clean, transform, and analyze datasets to uncover patterns, forecast outcomes, and empower executive decision-making.</p>
@@ -1056,22 +1317,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Have you ever presented data that contradicted a leader's intuition or hypothesis? How did you communicate the findings?",
+              prompt:
+                "Have you ever presented data that contradicted a leader's intuition or hypothesis? How did you communicate the findings?",
               tip: "Show that you respect leadership's perspective while letting objective data guide business decisions.",
-              model: "During an analytics internship, our marketing director assumed a specific email campaign was driving our sales bump. When I analyzed the multi-touch attribution data in SQL, I discovered that 85% of purchasers had already initiated a trial via organic search before the email was sent. In my presentation, I validated the campaign's strong engagement rates first, then walked through the attribution model step-by-step using clear cohort charts. By focusing on methodology, leadership reallocated $15,000 to higher-converting channels.",
-              criteria: ["Framed the contradiction objectively with data rather than personal opinion", "Maintained constructive rapport with leadership without being defensive", "Connected the analysis directly to business impact and cost efficiency"]
+              model:
+                "During an analytics internship, our marketing director assumed a specific email campaign was driving our sales bump. When I analyzed the multi-touch attribution data in SQL, I discovered that 85% of purchasers had already initiated a trial via organic search before the email was sent. In my presentation, I validated the campaign's strong engagement rates first, then walked through the attribution model step-by-step using clear cohort charts. By focusing on methodology, leadership reallocated $15,000 to higher-converting channels.",
+              criteria: [
+                "Framed the contradiction objectively with data rather than personal opinion",
+                "Maintained constructive rapport with leadership without being defensive",
+                "Connected the analysis directly to business impact and cost efficiency",
+              ],
             },
             technical: {
-              prompt: "What is the difference between WHERE and HAVING in SQL? In what order are they executed in a query?",
-              model: "The WHERE clause filters individual rows before any aggregations or groupings take place. In contrast, the HAVING clause filters grouped records after an aggregate function (such as COUNT, SUM, or AVG) has been computed via a GROUP BY clause. In SQL logical query processing, FROM and WHERE execute first to narrow down rows, followed by GROUP BY, then HAVING evaluates aggregated groups, and finally SELECT and ORDER BY execute.",
-              criteria: ["Identified row-level filtering (WHERE) vs. aggregated group filtering (HAVING)", "Specified that HAVING requires or follows GROUP BY", "Accurately mapped the logical query execution order"]
-            }
-          }
+              prompt:
+                "What is the difference between WHERE and HAVING in SQL? In what order are they executed in a query?",
+              model:
+                "The WHERE clause filters individual rows before any aggregations or groupings take place. In contrast, the HAVING clause filters grouped records after an aggregate function (such as COUNT, SUM, or AVG) has been computed via a GROUP BY clause. In SQL logical query processing, FROM and WHERE execute first to narrow down rows, followed by GROUP BY, then HAVING evaluates aggregated groups, and finally SELECT and ORDER BY execute.",
+              criteria: [
+                "Identified row-level filtering (WHERE) vs. aggregated group filtering (HAVING)",
+                "Specified that HAVING requires or follows GROUP BY",
+                "Accurately mapped the logical query execution order",
+              ],
+            },
+          },
         },
 
         cyber: {
           title: "Cybersecurity Analyst",
-          image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Cybersecurity Analysts safeguard an organization's network, cloud perimeter, and endpoints by monitoring telemetry, triaging vulnerabilities, and defending against cyber threats.</p>
@@ -1106,22 +1380,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Describe how you prioritize multiple high-severity security alerts that trigger simultaneously across different departments.",
+              prompt:
+                "Describe how you prioritize multiple high-severity security alerts that trigger simultaneously across different departments.",
               tip: "Articulate a risk-based prioritization framework focusing on crown-jewel assets.",
-              model: "When alerts trigger concurrently, I triage based on asset criticality and containment potential. First, I identify the asset tier: an alert involving our production database or domain controller immediately supersedes a standard workstation alert. Second, I look for indicators of active lateral movement or data exfiltration. If a workstation shows command-and-control beaconing, I isolate that host immediately via our EDR console to stop propagation before investigating deeper.",
-              criteria: ["Established a clear triage framework based on asset criticality", "Took immediate containment action (e.g., host isolation) to stop lateral movement", "Demonstrated composure and structured threat escalation"]
+              model:
+                "When alerts trigger concurrently, I triage based on asset criticality and containment potential. First, I identify the asset tier: an alert involving our production database or domain controller immediately supersedes a standard workstation alert. Second, I look for indicators of active lateral movement or data exfiltration. If a workstation shows command-and-control beaconing, I isolate that host immediately via our EDR console to stop propagation before investigating deeper.",
+              criteria: [
+                "Established a clear triage framework based on asset criticality",
+                "Took immediate containment action (e.g., host isolation) to stop lateral movement",
+                "Demonstrated composure and structured threat escalation",
+              ],
             },
             technical: {
-              prompt: "What is the difference between symmetric and asymmetric encryption? Where is each typically applied during an HTTPS handshake?",
-              model: "Symmetric encryption uses a single shared secret key to both encrypt and decrypt data. It is computationally fast, making it ideal for bulk data transfer. Asymmetric encryption uses a mathematically linked public-private key pair. It is slower and computationally expensive. During an HTTPS/TLS handshake, asymmetric encryption is used first to authenticate the server's certificate and securely exchange a session key. Once agreed upon, both client and server switch to symmetric encryption using that session key for the actual payload data.",
-              criteria: ["Differentiated single shared key vs. public/private key pair", "Explained the speed/computational efficiency trade-off", "Accurately explained their role in TLS/HTTPS handshakes"]
-            }
-          }
+              prompt:
+                "What is the difference between symmetric and asymmetric encryption? Where is each typically applied during an HTTPS handshake?",
+              model:
+                "Symmetric encryption uses a single shared secret key to both encrypt and decrypt data. It is computationally fast, making it ideal for bulk data transfer. Asymmetric encryption uses a mathematically linked public-private key pair. It is slower and computationally expensive. During an HTTPS/TLS handshake, asymmetric encryption is used first to authenticate the server's certificate and securely exchange a session key. Once agreed upon, both client and server switch to symmetric encryption using that session key for the actual payload data.",
+              criteria: [
+                "Differentiated single shared key vs. public/private key pair",
+                "Explained the speed/computational efficiency trade-off",
+                "Accurately explained their role in TLS/HTTPS handshakes",
+              ],
+            },
+          },
         },
 
         project: {
           title: "IT Project Manager",
-          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>IT Project Managers lead cross-functional technology initiatives from initiation to closure. They coordinate developers, designers, and business leaders to deliver technical projects on time and on budget.</p>
@@ -1156,23 +1443,36 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Tell me about a time a project was slipping behind schedule. What specific interventions did you implement to bring it back on track?",
+              prompt:
+                "Tell me about a time a project was slipping behind schedule. What specific interventions did you implement to bring it back on track?",
               tip: "Explain how you evaluated scope, reallocated resources, and managed expectations rather than simply asking developers to work overtime.",
-              model: "During our Junior Core systems project, our team fell three days behind sprint milestones due to unpredicted API schema changes. As project lead, I convened an emergency 20-minute re-scoping session. I plotted our remaining deliverables against our critical path and identified two non-essential features we could defer to post-launch. By de-scoping those low-impact items and pairing our strongest coder with a teammate blocked on database seeding, we restored velocity and met our demo deadline with zero defects in our core user flow.",
-              criteria: ["Identified the root cause of the delay", "Re-evaluated scope and critical path rather than just applying pressure", "Communicated realigned milestones proactively with stakeholders"]
+              model:
+                "During our Junior Core systems project, our team fell three days behind sprint milestones due to unpredicted API schema changes. As project lead, I convened an emergency 20-minute re-scoping session. I plotted our remaining deliverables against our critical path and identified two non-essential features we could defer to post-launch. By de-scoping those low-impact items and pairing our strongest coder with a teammate blocked on database seeding, we restored velocity and met our demo deadline with zero defects in our core user flow.",
+              criteria: [
+                "Identified the root cause of the delay",
+                "Re-evaluated scope and critical path rather than just applying pressure",
+                "Communicated realigned milestones proactively with stakeholders",
+              ],
             },
             technical: {
-              prompt: "What is the difference between Agile and Waterfall project methodologies? In what scenario would you choose Waterfall over Agile?",
-              model: "Waterfall is a linear, sequential project management methodology where each phase (requirements, design, implementation, verification, maintenance) must be completed before the next begins. It relies on comprehensive upfront documentation. Agile is iterative and incremental, emphasizing rapid feedback loops, minimum viable products, and continuous adjustments in 2- to 4-week sprints. You choose Waterfall when requirements are fixed, fully understood, and heavily regulated—such as aerospace flight control systems, medical device software, or large physical data center cabling—where late changes are prohibitively costly.",
-              criteria: ["Articulated linear/sequential vs. iterative/incremental dynamics", "Explained the difference in upfront documentation and flexibility", "Provided a valid scenario for Waterfall (e.g., regulatory, hardware, fixed scope)"]
-            }
-          }
+              prompt:
+                "What is the difference between Agile and Waterfall project methodologies? In what scenario would you choose Waterfall over Agile?",
+              model:
+                "Waterfall is a linear, sequential project management methodology where each phase (requirements, design, implementation, verification, maintenance) must be completed before the next begins. It relies on comprehensive upfront documentation. Agile is iterative and incremental, emphasizing rapid feedback loops, minimum viable products, and continuous adjustments in 2- to 4-week sprints. You choose Waterfall when requirements are fixed, fully understood, and heavily regulated—such as aerospace flight control systems, medical device software, or large physical data center cabling—where late changes are prohibitively costly.",
+              criteria: [
+                "Articulated linear/sequential vs. iterative/incremental dynamics",
+                "Explained the difference in upfront documentation and flexibility",
+                "Provided a valid scenario for Waterfall (e.g., regulatory, hardware, fixed scope)",
+              ],
+            },
+          },
         },
 
         product: {
-  title: "UX Designer / Product Manager",
-  image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=80",
-  content: `
+          title: "UX Designer / Product Manager",
+          image:
+            "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=80",
+          content: `
             <h3>What Does This Role Do?</h3>
             <p>Product Managers and UX Designers identify customer pain points, validate user personas, design intuitive user experiences, and guide technical product vision from concept to market.</p>
             <h3>Day-to-Day Responsibilities</h3>
@@ -1206,22 +1506,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Walk me through how you decided to drop or redesign a feature based on negative user feedback or behavioral metrics.",
+              prompt:
+                "Walk me through how you decided to drop or redesign a feature based on negative user feedback or behavioral metrics.",
               tip: "Highlight humility, active listening to data, and quick iteration cycles.",
-              model: "While testing a campus room reservation app, we designed an intricate multi-step filtering flow for room amenities. Analytics showed a 62% drop-off at step two, and user interviews revealed students just wanted the quickest available quiet room near the library. Despite having spent a week designing the advanced filter components, I advocated simplifying the flow to a single 'Quick Book 1-Hour Study Space' button. Instant bookings increased by 80% in our next usability testing session.",
-              criteria: ["Used both quantitative metrics and qualitative discovery", "Demonstrated willingness to pivot without ego", "Measured the positive impact of the redesigned experience"]
+              model:
+                "While testing a campus room reservation app, we designed an intricate multi-step filtering flow for room amenities. Analytics showed a 62% drop-off at step two, and user interviews revealed students just wanted the quickest available quiet room near the library. Despite having spent a week designing the advanced filter components, I advocated simplifying the flow to a single 'Quick Book 1-Hour Study Space' button. Instant bookings increased by 80% in our next usability testing session.",
+              criteria: [
+                "Used both quantitative metrics and qualitative discovery",
+                "Demonstrated willingness to pivot without ego",
+                "Measured the positive impact of the redesigned experience",
+              ],
             },
             technical: {
-              prompt: "How do you prioritize competing feature requests from sales, engineering, and end users when building a product roadmap?",
-              model: "I evaluate feature requests through a structured prioritization matrix like RICE (Reach, Impact, Confidence, and Effort). I calculate the estimated business reach and user impact, weigh our team's confidence based on data validation, and divide by engineering effort estimates from our tech lead. This transforms emotional debates into objective ROI discussions. Additionally, I ensure our roadmap allocates 20% of every sprint to engineering debt, preserving developer sanity and application stability alongside customer-facing features.",
-              criteria: ["Cited an established prioritization framework (RICE, MoSCoW, or Kano model)", "Balanced short-term sales requests with technical debt and user needs", "Emphasized cross-functional stakeholder collaboration"]
-            }
-          }
+              prompt:
+                "How do you prioritize competing feature requests from sales, engineering, and end users when building a product roadmap?",
+              model:
+                "I evaluate feature requests through a structured prioritization matrix like RICE (Reach, Impact, Confidence, and Effort). I calculate the estimated business reach and user impact, weigh our team's confidence based on data validation, and divide by engineering effort estimates from our tech lead. This transforms emotional debates into objective ROI discussions. Additionally, I ensure our roadmap allocates 20% of every sprint to engineering debt, preserving developer sanity and application stability alongside customer-facing features.",
+              criteria: [
+                "Cited an established prioritization framework (RICE, MoSCoW, or Kano model)",
+                "Balanced short-term sales requests with technical debt and user needs",
+                "Emphasized cross-functional stakeholder collaboration",
+              ],
+            },
+          },
         },
 
         erp: {
           title: "ERP / Systems Consultant (SAP, Salesforce)",
-          image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>ERP & Systems Consultants design, configure, and deploy mission-critical enterprise systems (such as SAP, Salesforce, Oracle, and Microsoft Dynamics) that automate global supply chains, finance, and CRM operations.</p>
@@ -1256,22 +1569,35 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Consulting projects involve steep learning curves and shifting client demands. Tell me about a time you had to master a new technology rapidly to deliver for a client.",
+              prompt:
+                "Consulting projects involve steep learning curves and shifting client demands. Tell me about a time you had to master a new technology rapidly to deliver for a client.",
               tip: "Emphasize your structured self-learning framework and resourcefulness.",
-              model: "During a student consulting engagement with a regional healthcare provider, our team was tasked with automating patient intake in Salesforce Health Cloud—a module none of us had configured previously. Rather than getting overwhelmed, I broke the challenge down: I spent two evenings completing official Trailhead modules, built a proof-of-concept Flow in a sandbox environment, and verified the data architecture with an alumnus mentor. We delivered the custom intake workflow three days ahead of the executive presentation.",
-              criteria: ["Demonstrated initiative and self-directed technical learning", "Utilized sandboxes and official documentation to test safely", "Delivered tangible business value to the client on schedule"]
+              model:
+                "During a student consulting engagement with a regional healthcare provider, our team was tasked with automating patient intake in Salesforce Health Cloud—a module none of us had configured previously. Rather than getting overwhelmed, I broke the challenge down: I spent two evenings completing official Trailhead modules, built a proof-of-concept Flow in a sandbox environment, and verified the data architecture with an alumnus mentor. We delivered the custom intake workflow three days ahead of the executive presentation.",
+              criteria: [
+                "Demonstrated initiative and self-directed technical learning",
+                "Utilized sandboxes and official documentation to test safely",
+                "Delivered tangible business value to the client on schedule",
+              ],
             },
             technical: {
-              prompt: "When implementing an enterprise system like SAP or Salesforce, when should you recommend out-of-the-box configuration versus custom code?",
-              model: "The guiding consulting principle is always 'configuration before customization'. Standard out-of-the-box features and declarative tools (like Salesforce Flows or SAP standard customization tables) should be used whenever a standard business process fits 80% of the requirement. This ensures lower implementation costs, simpler maintenance, and seamless vendor version upgrades. Custom code (such as Apex triggers, custom LWC, or ABAP scripts) should be reserved strictly for proprietary competitive advantages or intricate integrations that declarative builders cannot support.",
-              criteria: ["Emphasized 'configuration before customization' philosophy", "Identified total cost of ownership and version upgrade risks of custom code", "Clearly explained when custom code is genuinely warranted"]
-            }
-          }
+              prompt:
+                "When implementing an enterprise system like SAP or Salesforce, when should you recommend out-of-the-box configuration versus custom code?",
+              model:
+                "The guiding consulting principle is always 'configuration before customization'. Standard out-of-the-box features and declarative tools (like Salesforce Flows or SAP standard customization tables) should be used whenever a standard business process fits 80% of the requirement. This ensures lower implementation costs, simpler maintenance, and seamless vendor version upgrades. Custom code (such as Apex triggers, custom LWC, or ABAP scripts) should be reserved strictly for proprietary competitive advantages or intricate integrations that declarative builders cannot support.",
+              criteria: [
+                "Emphasized 'configuration before customization' philosophy",
+                "Identified total cost of ownership and version upgrade risks of custom code",
+                "Clearly explained when custom code is genuinely warranted",
+              ],
+            },
+          },
         },
 
         cloud: {
           title: "Cloud / Infrastructure Engineer",
-          image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+          image:
+            "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
           content: `
             <h3>What Does This Role Do?</h3>
             <p>Cloud & Infrastructure Engineers build and maintain resilient, scalable, and automated cloud computing environments across AWS, Azure, and GCP that host global applications.</p>
@@ -1306,30 +1632,106 @@
           `,
           interview: {
             behavioral: {
-              prompt: "Describe an experience where a deployment failed or an infrastructure incident caused downtime. How did you react?",
+              prompt:
+                "Describe an experience where a deployment failed or an infrastructure incident caused downtime. How did you react?",
               tip: "Walk through incident triage, root cause analysis, and how you engineered safeguards so it never happens again.",
-              model: "During staging deployment for our junior core capstone, our Docker build broke because an unpinned package dependency updated with breaking changes, taking down our staging environment. I rolled back our staging cluster to the prior container image hash in Azure within eight minutes to restore access. Next, I updated our Dockerfile to pin strict semantic version tags and integrated automated linting into our GitHub Actions workflow to block unverified dependencies on pull requests.",
-              criteria: ["Maintained composure and executed immediate rollback to restore uptime", "Conducted root cause diagnosis rather than temporary band-aids", "Automated future preventative safeguards into the CI/CD pipeline"]
+              model:
+                "During staging deployment for our junior core capstone, our Docker build broke because an unpinned package dependency updated with breaking changes, taking down our staging environment. I rolled back our staging cluster to the prior container image hash in Azure within eight minutes to restore access. Next, I updated our Dockerfile to pin strict semantic version tags and integrated automated linting into our GitHub Actions workflow to block unverified dependencies on pull requests.",
+              criteria: [
+                "Maintained composure and executed immediate rollback to restore uptime",
+                "Conducted root cause diagnosis rather than temporary band-aids",
+                "Automated future preventative safeguards into the CI/CD pipeline",
+              ],
             },
             technical: {
-              prompt: "What is Infrastructure as Code (IaC), and what key advantages does Terraform provide over manually configuring servers in the AWS Console?",
-              model: "Infrastructure as Code (IaC) is the practice of provisioning and managing computing infrastructure through machine-readable definition files rather than manual interactive console configuration. Using a declarative tool like Terraform provides three major benefits: first, idempotency and reproducibility across environments (Development, Staging, Production); second, full version control with audit histories and pull request reviews in Git; and third, automated state drift detection that prevents configuration errors and catastrophic human mistakes.",
-              criteria: ["Defined declarative machine-readable configuration files", "Highlighted environment consistency and Git version control", "Mentioned state management, drift detection, or repeatability"]
-            }
-          }
-        }
+              prompt:
+                "What is Infrastructure as Code (IaC), and what key advantages does Terraform provide over manually configuring servers in the AWS Console?",
+              model:
+                "Infrastructure as Code (IaC) is the practice of provisioning and managing computing infrastructure through machine-readable definition files rather than manual interactive console configuration. Using a declarative tool like Terraform provides three major benefits: first, idempotency and reproducibility across environments (Development, Staging, Production); second, full version control with audit histories and pull request reviews in Git; and third, automated state drift detection that prevents configuration errors and catastrophic human mistakes.",
+              criteria: [
+                "Defined declarative machine-readable configuration files",
+                "Highlighted environment consistency and Git version control",
+                "Mentioned state management, drift detection, or repeatability",
+              ],
+            },
+          },
+        },
       };
 
       /* DASHBOARD EXPLORER DATA FOR ALL 8 PATHS */
       const dashboardData = {
-        software: { salary: { entry: [65000, 90000], mid: [90000, 125000], senior: [120000, 170000] }, growth: 17, growthLabel: "Much faster than average" },
-        business: { salary: { entry: [55000, 80000], mid: [75000, 105000], senior: [100000, 135000] }, growth: 9, growthLabel: "Steady / above average" },
-        data: { salary: { entry: [55000, 85000], mid: [75000, 110000], senior: [100000, 160000] }, growth: 36, growthLabel: "Much faster than average" },
-        cyber: { salary: { entry: [60000, 90000], mid: [85000, 120000], senior: [110000, 160000] }, growth: 33, growthLabel: "Much faster than average" },
-        project: { salary: { entry: [60000, 85000], mid: [85000, 115000], senior: [115000, 155000] }, growth: 15, growthLabel: "Much faster than average" },
-        product: { salary: { entry: [65000, 92000], mid: [95000, 130000], senior: [130000, 175000] }, growth: 16, growthLabel: "Much faster than average" },
-        erp: { salary: { entry: [70000, 95000], mid: [95000, 135000], senior: [135000, 180000] }, growth: 11, growthLabel: "Faster than average" },
-        cloud: { salary: { entry: [68000, 95000], mid: [95000, 135000], senior: [130000, 175000] }, growth: 22, growthLabel: "Much faster than average" }
+        software: {
+          salary: {
+            entry: [65000, 90000],
+            mid: [90000, 125000],
+            senior: [120000, 170000],
+          },
+          growth: 17,
+          growthLabel: "Much faster than average",
+        },
+        business: {
+          salary: {
+            entry: [55000, 80000],
+            mid: [75000, 105000],
+            senior: [100000, 135000],
+          },
+          growth: 9,
+          growthLabel: "Steady / above average",
+        },
+        data: {
+          salary: {
+            entry: [55000, 85000],
+            mid: [75000, 110000],
+            senior: [100000, 160000],
+          },
+          growth: 36,
+          growthLabel: "Much faster than average",
+        },
+        cyber: {
+          salary: {
+            entry: [60000, 90000],
+            mid: [85000, 120000],
+            senior: [110000, 160000],
+          },
+          growth: 33,
+          growthLabel: "Much faster than average",
+        },
+        project: {
+          salary: {
+            entry: [60000, 85000],
+            mid: [85000, 115000],
+            senior: [115000, 155000],
+          },
+          growth: 15,
+          growthLabel: "Much faster than average",
+        },
+        product: {
+          salary: {
+            entry: [65000, 92000],
+            mid: [95000, 130000],
+            senior: [130000, 175000],
+          },
+          growth: 16,
+          growthLabel: "Much faster than average",
+        },
+        erp: {
+          salary: {
+            entry: [70000, 95000],
+            mid: [95000, 135000],
+            senior: [135000, 180000],
+          },
+          growth: 11,
+          growthLabel: "Faster than average",
+        },
+        cloud: {
+          salary: {
+            entry: [68000, 95000],
+            mid: [95000, 135000],
+            senior: [130000, 175000],
+          },
+          growth: 22,
+          growthLabel: "Much faster than average",
+        },
       };
 
       let selectedDashboardCareer = "software";
@@ -1351,20 +1753,29 @@
         const data = dashboardData[selectedDashboardCareer];
         const range = data.salary[experience];
 
-        document.getElementById("salaryLabel").textContent = `${formatSalary(range[0])}–${formatSalary(range[1])}`;
+        document.getElementById("salaryLabel").textContent =
+          `${formatSalary(range[0])}–${formatSalary(range[1])}`;
 
         const minScale = 40000;
         const maxScale = 180000;
-        const left = Math.max(0, ((range[0] - minScale) / (maxScale - minScale)) * 100);
-        const width = Math.min(100 - left, ((range[1] - range[0]) / (maxScale - minScale)) * 100);
+        const left = Math.max(
+          0,
+          ((range[0] - minScale) / (maxScale - minScale)) * 100,
+        );
+        const width = Math.min(
+          100 - left,
+          ((range[1] - range[0]) / (maxScale - minScale)) * 100,
+        );
 
         const salaryRange = document.getElementById("salaryRange");
         salaryRange.style.marginLeft = left + "%";
         salaryRange.style.width = Math.max(width, 4) + "%";
 
-        document.getElementById("growthPercent").textContent = "+" + data.growth + "%";
+        document.getElementById("growthPercent").textContent =
+          "+" + data.growth + "%";
         document.getElementById("growthLabel").textContent = data.growthLabel;
-        document.getElementById("growthBar").style.width = Math.min((data.growth / 40) * 100, 100) + "%";
+        document.getElementById("growthBar").style.width =
+          Math.min((data.growth / 40) * 100, 100) + "%";
       }
 
       /* Tab Switching Logic */
@@ -1402,7 +1813,8 @@
         const details = careerData[career];
         document.getElementById("detail-title").textContent = details.title;
         const bannerHTML = `<img src="${details.image}" alt="${details.title}" class="modal-banner-img" />`;
-        document.getElementById("detail-content").innerHTML = bannerHTML + details.content;
+        document.getElementById("detail-content").innerHTML =
+          bannerHTML + details.content;
         document.getElementById("careerModal").style.display = "block";
         document.body.style.overflow = "hidden";
       }
@@ -1425,9 +1837,12 @@
         const type = document.getElementById("prepTypeSelect").value;
         const qData = careerData[role].interview[type];
 
-        document.getElementById("questionHeading").textContent = `${type.toUpperCase()} INTERVIEW QUESTION`;
+        document.getElementById("questionHeading").textContent =
+          `${type.toUpperCase()} INTERVIEW QUESTION`;
         document.getElementById("questionText").textContent = qData.prompt;
-        document.getElementById("interviewTipText").innerHTML = qData.tip || "Structure your answer logically with a clear situation and measurable result.";
+        document.getElementById("interviewTipText").innerHTML =
+          qData.tip ||
+          "Structure your answer logically with a clear situation and measurable result.";
         document.getElementById("userResponse").value = "";
         document.getElementById("recordedAudio").src = "";
         document.getElementById("audioPlayback").style.display = "none";
@@ -1437,10 +1852,14 @@
 
       function evaluateAnswer() {
         const userText = document.getElementById("userResponse").value.trim();
-        const hasRecording = document.getElementById("recordedAudio").src && document.getElementById("audioPlayback").style.display !== "none";
+        const hasRecording =
+          document.getElementById("recordedAudio").src &&
+          document.getElementById("audioPlayback").style.display !== "none";
 
         if (!userText && !hasRecording) {
-          alert("Please type your answer or record a spoken answer before revealing the strong answer!");
+          alert(
+            "Please type your answer or record a spoken answer before revealing the strong answer!",
+          );
           return;
         }
 
@@ -1468,118 +1887,276 @@
       /* EXPANDED 6-QUESTION QUIZ ENGINE COVERING ALL 8 ROLES */
       const quizQuestions = [
         {
-          question: "When approaching a new technology project, what task excites you the most?",
+          question:
+            "When approaching a new technology project, what task excites you the most?",
           options: [
-            { text: "Writing modular, object-oriented code and designing algorithmic features", role: "software" },
-            { text: "Decomposing user pain points into flowcharts and technical user requirements", role: "business" },
-            { text: "Querying raw databases to identify statistical trends, patterns, and anomalies", role: "data" },
-            { text: "Auditing network logs, hunting security vulnerabilities, and testing defenses", role: "cyber" },
-            { text: "Building timelines, organizing sprint backlogs, and leading team delivery", role: "project" },
-            { text: "Designing high-fidelity UI prototypes in Figma and running usability sessions", role: "product" },
-            { text: "Configuring business workflows inside enterprise suites like SAP or Salesforce", role: "erp" },
-            { text: "Writing Terraform scripts to automate resilient cloud networks and servers", role: "cloud" }
-          ]
+            {
+              text: "Writing modular, object-oriented code and designing algorithmic features",
+              role: "software",
+            },
+            {
+              text: "Decomposing user pain points into flowcharts and technical user requirements",
+              role: "business",
+            },
+            {
+              text: "Querying raw databases to identify statistical trends, patterns, and anomalies",
+              role: "data",
+            },
+            {
+              text: "Auditing network logs, hunting security vulnerabilities, and testing defenses",
+              role: "cyber",
+            },
+            {
+              text: "Building timelines, organizing sprint backlogs, and leading team delivery",
+              role: "project",
+            },
+            {
+              text: "Designing high-fidelity UI prototypes in Figma and running usability sessions",
+              role: "product",
+            },
+            {
+              text: "Configuring business workflows inside enterprise suites like SAP or Salesforce",
+              role: "erp",
+            },
+            {
+              text: "Writing Terraform scripts to automate resilient cloud networks and servers",
+              role: "cloud",
+            },
+          ],
         },
         {
-          question: "Which work dynamic best mirrors your natural communication and problem-solving style?",
+          question:
+            "Which work dynamic best mirrors your natural communication and problem-solving style?",
           options: [
-            { text: "Deep individual focus solving complex logic errors, debugging syntax, and reviewing code", role: "software" },
-            { text: "Connecting business stakeholders and software engineers to bridge communication gaps", role: "business" },
-            { text: "Extracting objective statistical proof to influence executive business strategy", role: "data" },
-            { text: "High-stakes, methodical defense and rapid containment during emergency incidents", role: "cyber" },
-            { text: "Coordinating cross-functional teams, removing impediments, and tracking budgets", role: "project" },
-            { text: "Championing end-user empathy, UX accessibility, and iterative design testing", role: "product" },
-            { text: "Consulting with corporate clients to transform business practices using SaaS/ERP tools", role: "erp" },
-            { text: "Automating deployment infrastructure so developers never have to configure servers manually", role: "cloud" }
-          ]
+            {
+              text: "Deep individual focus solving complex logic errors, debugging syntax, and reviewing code",
+              role: "software",
+            },
+            {
+              text: "Connecting business stakeholders and software engineers to bridge communication gaps",
+              role: "business",
+            },
+            {
+              text: "Extracting objective statistical proof to influence executive business strategy",
+              role: "data",
+            },
+            {
+              text: "High-stakes, methodical defense and rapid containment during emergency incidents",
+              role: "cyber",
+            },
+            {
+              text: "Coordinating cross-functional teams, removing impediments, and tracking budgets",
+              role: "project",
+            },
+            {
+              text: "Championing end-user empathy, UX accessibility, and iterative design testing",
+              role: "product",
+            },
+            {
+              text: "Consulting with corporate clients to transform business practices using SaaS/ERP tools",
+              role: "erp",
+            },
+            {
+              text: "Automating deployment infrastructure so developers never have to configure servers manually",
+              role: "cloud",
+            },
+          ],
         },
         {
-          question: "Which software stack or toolkit would you feel most energized mastering?",
+          question:
+            "Which software stack or toolkit would you feel most energized mastering?",
           options: [
-            { text: "C#, Python, JavaScript/TypeScript, Git, and RESTful web APIs", role: "software" },
-            { text: "Jira, Lucidchart, BPMN process maps, and stakeholder interview frameworks", role: "business" },
-            { text: "SQL, Tableau, Power BI, and Python libraries (pandas, numpy, scikit-learn)", role: "data" },
-            { text: "Wireshark, Splunk SIEM, Linux command line, and MITRE ATT&CK frameworks", role: "cyber" },
-            { text: "Asana, Agile/Scrum ceremonies, Gantt charts, and resource allocation boards", role: "project" },
-            { text: "Figma, design component systems, Google Analytics, and wireframe kits", role: "product" },
-            { text: "Salesforce Flow Builder, SAP S/4HANA, Workday, and enterprise ETL integrations", role: "erp" },
-            { text: "AWS/Azure Cloud consoles, Docker containers, Kubernetes, and Terraform", role: "cloud" }
-          ]
+            {
+              text: "C#, Python, JavaScript/TypeScript, Git, and RESTful web APIs",
+              role: "software",
+            },
+            {
+              text: "Jira, Lucidchart, BPMN process maps, and stakeholder interview frameworks",
+              role: "business",
+            },
+            {
+              text: "SQL, Tableau, Power BI, and Python libraries (pandas, numpy, scikit-learn)",
+              role: "data",
+            },
+            {
+              text: "Wireshark, Splunk SIEM, Linux command line, and MITRE ATT&CK frameworks",
+              role: "cyber",
+            },
+            {
+              text: "Asana, Agile/Scrum ceremonies, Gantt charts, and resource allocation boards",
+              role: "project",
+            },
+            {
+              text: "Figma, design component systems, Google Analytics, and wireframe kits",
+              role: "product",
+            },
+            {
+              text: "Salesforce Flow Builder, SAP S/4HANA, Workday, and enterprise ETL integrations",
+              role: "erp",
+            },
+            {
+              text: "AWS/Azure Cloud consoles, Docker containers, Kubernetes, and Terraform",
+              role: "cloud",
+            },
+          ],
         },
         {
-          question: "How do you prefer to create measurable value for an organization?",
+          question:
+            "How do you prefer to create measurable value for an organization?",
           options: [
-            { text: "Delivering fast, bug-free, and scalable software features that end users love", role: "software" },
-            { text: "Eliminating wasted business steps and ensuring IT builds what stakeholders truly need", role: "business" },
-            { text: "Uncovering hidden revenue opportunities and forecasting consumer behavior from data", role: "data" },
-            { text: "Preventing costly ransomware breaches and safeguarding private consumer information", role: "cyber" },
-            { text: "Ensuring high-profile tech initiatives ship on schedule and within budget constraints", role: "project" },
-            { text: "Increasing user conversion and satisfaction by eliminating friction in digital apps", role: "product" },
-            { text: "Automating global supply chain and accounting workflows across massive enterprises", role: "erp" },
-            { text: "Guaranteeing 99.99% system uptime, zero latency, and seamless auto-scaling in the cloud", role: "cloud" }
-          ]
+            {
+              text: "Delivering fast, bug-free, and scalable software features that end users love",
+              role: "software",
+            },
+            {
+              text: "Eliminating wasted business steps and ensuring IT builds what stakeholders truly need",
+              role: "business",
+            },
+            {
+              text: "Uncovering hidden revenue opportunities and forecasting consumer behavior from data",
+              role: "data",
+            },
+            {
+              text: "Preventing costly ransomware breaches and safeguarding private consumer information",
+              role: "cyber",
+            },
+            {
+              text: "Ensuring high-profile tech initiatives ship on schedule and within budget constraints",
+              role: "project",
+            },
+            {
+              text: "Increasing user conversion and satisfaction by eliminating friction in digital apps",
+              role: "product",
+            },
+            {
+              text: "Automating global supply chain and accounting workflows across massive enterprises",
+              role: "erp",
+            },
+            {
+              text: "Guaranteeing 99.99% system uptime, zero latency, and seamless auto-scaling in the cloud",
+              role: "cloud",
+            },
+          ],
         },
         {
-          question: "When unexpected complications arise, what is your instinctive approach?",
+          question:
+            "When unexpected complications arise, what is your instinctive approach?",
           options: [
-            { text: "Trace the stack log, set breakpoints, and systematically isolate code bugs", role: "software" },
-            { text: "Re-interview business users to clarify requirements and propose functional trade-offs", role: "business" },
-            { text: "Verify data integrity, check for sampling bias, and recalculate metrics", role: "data" },
-            { text: "Immediately isolate affected nodes, contain propagation, and audit network traffic", role: "cyber" },
-            { text: "Re-evaluate the critical path, adjust resource allocations, and realign expectations", role: "project" },
-            { text: "Gather real-time user session recordings to pinpoint exactly where users got confused", role: "product" },
-            { text: "Check standard configuration tables and consult vendor release notes for best practices", role: "erp" },
-            { text: "Roll back to the previous container image hash and inspect deployment CI/CD logs", role: "cloud" }
-          ]
+            {
+              text: "Trace the stack log, set breakpoints, and systematically isolate code bugs",
+              role: "software",
+            },
+            {
+              text: "Re-interview business users to clarify requirements and propose functional trade-offs",
+              role: "business",
+            },
+            {
+              text: "Verify data integrity, check for sampling bias, and recalculate metrics",
+              role: "data",
+            },
+            {
+              text: "Immediately isolate affected nodes, contain propagation, and audit network traffic",
+              role: "cyber",
+            },
+            {
+              text: "Re-evaluate the critical path, adjust resource allocations, and realign expectations",
+              role: "project",
+            },
+            {
+              text: "Gather real-time user session recordings to pinpoint exactly where users got confused",
+              role: "product",
+            },
+            {
+              text: "Check standard configuration tables and consult vendor release notes for best practices",
+              role: "erp",
+            },
+            {
+              text: "Roll back to the previous container image hash and inspect deployment CI/CD logs",
+              role: "cloud",
+            },
+          ],
         },
         {
-          question: "What career milestone sounds most rewarding to achieve five years post-graduation?",
+          question:
+            "What career milestone sounds most rewarding to achieve five years post-graduation?",
           options: [
-            { text: "Lead Software Architect designing mission-critical back-end distributed systems", role: "software" },
-            { text: "Senior Systems Analyst leading digital enterprise architecture and technical roadmaps", role: "business" },
-            { text: "Principal Data Scientist developing proprietary machine learning models for executives", role: "data" },
-            { text: "Chief Information Security Officer (CISO) architecting corporate zero-trust defenses", role: "cyber" },
-            { text: "Director of Technical Program Management overseeing multimillion-dollar portfolios", role: "project" },
-            { text: "Head of Product guiding consumer apps used by millions of daily active users", role: "product" },
-            { text: "Principal Enterprise Consultant leading digital transformations at a global consultancy", role: "erp" },
-            { text: "Chief DevOps / Cloud Architect designing multi-region infrastructure worldwide", role: "cloud" }
-          ]
-        }
+            {
+              text: "Lead Software Architect designing mission-critical back-end distributed systems",
+              role: "software",
+            },
+            {
+              text: "Senior Systems Analyst leading digital enterprise architecture and technical roadmaps",
+              role: "business",
+            },
+            {
+              text: "Principal Data Scientist developing proprietary machine learning models for executives",
+              role: "data",
+            },
+            {
+              text: "Chief Information Security Officer (CISO) architecting corporate zero-trust defenses",
+              role: "cyber",
+            },
+            {
+              text: "Director of Technical Program Management overseeing multimillion-dollar portfolios",
+              role: "project",
+            },
+            {
+              text: "Head of Product guiding consumer apps used by millions of daily active users",
+              role: "product",
+            },
+            {
+              text: "Principal Enterprise Consultant leading digital transformations at a global consultancy",
+              role: "erp",
+            },
+            {
+              text: "Chief DevOps / Cloud Architect designing multi-region infrastructure worldwide",
+              role: "cloud",
+            },
+          ],
+        },
       ];
 
       const careerResults = {
         software: {
           title: "Software / Application Developer",
-          summary: "You are a builder who thrives on structural logic, algorithmic problem-solving, and crafting functional digital products."
+          summary:
+            "You are a builder who thrives on structural logic, algorithmic problem-solving, and crafting functional digital products.",
         },
         business: {
           title: "Business / Systems Analyst",
-          summary: "You are a strategic communicator who excels at bridging the gap between business objectives and technical implementation."
+          summary:
+            "You are a strategic communicator who excels at bridging the gap between business objectives and technical implementation.",
         },
         data: {
           title: "Data Analyst / Data Scientist",
-          summary: "You are an analytical detective who loves deriving actionable business clarity from complex and untidy datasets."
+          summary:
+            "You are an analytical detective who loves deriving actionable business clarity from complex and untidy datasets.",
         },
         cyber: {
           title: "Cybersecurity Analyst",
-          summary: "You are a guardian who thrives in risk analysis, system architecture security, and fast-paced incident mitigation."
+          summary:
+            "You are a guardian who thrives in risk analysis, system architecture security, and fast-paced incident mitigation.",
         },
         project: {
           title: "IT Project Manager",
-          summary: "You are an orchestrator who excels at organizing complex technical efforts, empowering engineering teams, and driving projects across the finish line."
+          summary:
+            "You are an orchestrator who excels at organizing complex technical efforts, empowering engineering teams, and driving projects across the finish line.",
         },
         product: {
           title: "UX Designer / Product Manager",
-          summary: "You are an empathetic visionary who bridges human psychology, aesthetic user experience, and business strategy to craft intuitive digital products."
+          summary:
+            "You are an empathetic visionary who bridges human psychology, aesthetic user experience, and business strategy to craft intuitive digital products.",
         },
         erp: {
           title: "ERP / Systems Consultant",
-          summary: "You are an enterprise strategist who loves mastering large-scale business suites (SAP, Salesforce) and transforming core corporate workflows."
+          summary:
+            "You are an enterprise strategist who loves mastering large-scale business suites (SAP, Salesforce) and transforming core corporate workflows.",
         },
         cloud: {
           title: "Cloud / Infrastructure Engineer",
-          summary: "You are a system automation engineer who loves architecting scalable cloud foundations, continuous integration pipelines, and resilient global infrastructure."
-        }
+          summary:
+            "You are a system automation engineer who loves architecting scalable cloud foundations, continuous integration pipelines, and resilient global infrastructure.",
+        },
       };
 
       function initQuiz() {
@@ -1596,20 +2173,31 @@
                 <input type="radio" name="question_${qIndex}" value="${opt.role}" style="margin-right: 10px;">
                 ${opt.text}
               </label>
-            `
+            `,
               )
               .join("")}
           </div>
-        `
+        `,
           )
           .join("");
       }
 
       function submitQuiz() {
-        const scores = { software: 0, business: 0, data: 0, cyber: 0, project: 0, product: 0, erp: 0, cloud: 0 };
+        const scores = {
+          software: 0,
+          business: 0,
+          data: 0,
+          cyber: 0,
+          project: 0,
+          product: 0,
+          erp: 0,
+          cloud: 0,
+        };
 
         for (let i = 0; i < quizQuestions.length; i++) {
-          const selected = document.querySelector(`input[name="question_${i}"]:checked`);
+          const selected = document.querySelector(
+            `input[name="question_${i}"]:checked`,
+          );
           if (!selected) {
             alert(`Please answer question ${i + 1} before submitting!`);
             return;
@@ -1646,7 +2234,9 @@
 
       async function startRecording() {
         try {
-          recordingStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          recordingStream = await navigator.mediaDevices.getUserMedia({
+            audio: true,
+          });
           mediaRecorder = new MediaRecorder(recordingStream);
           audioChunks = [];
 
@@ -1655,7 +2245,9 @@
           };
 
           mediaRecorder.onstop = function () {
-            const audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType });
+            const audioBlob = new Blob(audioChunks, {
+              type: mediaRecorder.mimeType,
+            });
             const audioURL = URL.createObjectURL(audioBlob);
 
             document.getElementById("recordedAudio").src = audioURL;
@@ -1666,7 +2258,8 @@
           mediaRecorder.start();
           document.getElementById("recordBtn").disabled = true;
           document.getElementById("stopBtn").disabled = false;
-          document.getElementById("recordingStatus").textContent = "🔴 Recording...";
+          document.getElementById("recordingStatus").textContent =
+            "🔴 Recording...";
         } catch (error) {
           alert("Microphone access is required to record your answer.");
           console.error(error);
@@ -1678,7 +2271,8 @@
           mediaRecorder.stop();
           document.getElementById("recordBtn").disabled = false;
           document.getElementById("stopBtn").disabled = true;
-          document.getElementById("recordingStatus").textContent = "Recording complete!";
+          document.getElementById("recordingStatus").textContent =
+            "Recording complete!";
         }
       }
 
